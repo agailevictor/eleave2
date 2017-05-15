@@ -1,0 +1,9 @@
+﻿body.loginbag {
+    background-image: url("/assets/images/patterns/bg_2.png");
+    background-repeat: repeat;
+}
+.symbol.required:before {
+	content: "*";
+	display: inline;
+	color: #E6674A;
+}
