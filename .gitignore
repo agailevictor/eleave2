@@ -250,3 +250,10 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+!*/cache/Web.config
+!*/cache/Web.Debug.config
+!*/cache/Web.Release.config
+Web.config
+Web.Debug.config
+Web.Release.config
