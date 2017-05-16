@@ -72,6 +72,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="fixed-left">
+<%--    <div class="se-pre-con"></div>--%>
+    <div class="loader"></div>
     <!-- Begin page -->
     <div id="wrapper">
 
@@ -129,8 +131,8 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="leaves" runat="server"><i class="fa fa-paper-plane"></i><span> Leaves</span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li id="leaves1" runat="server"><a href="ListLeaves">Apply</a></li>
-                                <li id="leaves2" runat="server"><a href="#">Cancel Approved</a></li>
+                                <li id="leaves3" runat="server"><a href="ListLeaves">Apply</a></li>
+                                <li id="leaves2" runat="server"><a href="cancel">Cancel Approved</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -185,6 +187,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function () {
             updateAlerts();
+            $(".loader").fadeOut("slow");
         });
     </script>
 

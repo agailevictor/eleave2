@@ -150,6 +150,9 @@
     <Content Include="assets\images\gallery\7.jpg" />
     <Content Include="assets\images\gallery\8.jpg" />
     <Content Include="assets\images\gallery\9.jpg" />
+    <Content Include="assets\images\loader\35.gif" />
+    <Content Include="assets\images\loader\double_loader.GIF" />
+    <Content Include="assets\images\loader\loading.gif" />
     <Content Include="assets\images\mail_confirm.png" />
     <Content Include="assets\images\multiple-arrow.png" />
     <Content Include="assets\images\patterns\bg_1.png" />
@@ -451,10 +454,12 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
+    <Content Include="user\cancel.aspx" />
     <Content Include="user\Dash.aspx" />
     <Content Include="user\leaveapply.aspx" />
     <Content Include="user\ListLeaves.aspx" />
     <Content Include="user\WebForm1.aspx" />
+    <Content Include="user\WebForm2.aspx" />
     <Content Include="ViewPdf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -496,11 +501,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>approved.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="user\approved_malaysia.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>approved_malaysia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="user\cancel.aspx.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\cancel.aspx.designer.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
@@ -513,6 +527,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>download_approved.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="user\leaveapply.aspx.cs">
       <DependentUpon>leaveapply.aspx</DependentUpon>
@@ -530,6 +545,7 @@
     </Compile>
     <Compile Include="user\UserMaster.Master.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
@@ -540,6 +556,13 @@
     </Compile>
     <Compile Include="user\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPdf.aspx.cs">
       <DependentUpon>ViewPdf.aspx</DependentUpon>

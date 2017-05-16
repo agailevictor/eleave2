@@ -9,6 +9,7 @@
             inputlimit_add2();
             hidefupload();
             $('#lblop').hide();
+            $('.list-unstyled').css("display", "block");
         });
         $(document).on("keydown", function (e) {
             if (e.which === 8 && !$(e.target).is("input, textarea")) {

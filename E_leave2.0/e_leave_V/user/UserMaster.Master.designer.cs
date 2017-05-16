@@ -40,13 +40,13 @@ namespace e_leave_V.user {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor leaves;
         
         /// <summary>
-        /// leaves1 control.
+        /// leaves3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves3;
         
         /// <summary>
         /// leaves2 control.

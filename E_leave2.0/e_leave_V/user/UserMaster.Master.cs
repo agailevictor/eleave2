@@ -46,11 +46,15 @@ namespace e_leave_V.user
                     break;
                 case "ListLeaves":
                     leaves.Attributes["class"] = "active subdrop";
-                    leaves1.Attributes["class"] = "active open";
+                    leaves3.Attributes["class"] = "active open";
                     break;
                 case "leaveapply":
                     leaves.Attributes["class"] = "active subdrop";
-                    leaves1.Attributes["class"] = "active open";
+                    leaves3.Attributes["class"] = "active open";
+                    break;
+                case "cancel":
+                    leaves.Attributes["class"] = "active subdrop";
+                    leaves2.Attributes["class"] = "active open";
                     break;
             }
         }

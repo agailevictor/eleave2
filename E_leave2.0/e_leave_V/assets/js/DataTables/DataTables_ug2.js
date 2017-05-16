@@ -54,7 +54,6 @@
         $('#grd_cancel_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown
     };
-
     return {
         //main function to initiate template pages
         init: function () {
