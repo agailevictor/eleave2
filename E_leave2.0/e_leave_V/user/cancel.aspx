@@ -66,6 +66,7 @@
             </div>
             <div class="row">
                 <div class="card-box">
+                    <div class="table-responsive">
                     <table runat="server" id="log_cancel" class="table table-striped table-bordered dt-responsive nowrap dumm">
                         <thead>
                             <tr>
@@ -83,6 +84,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                     <asp:GridView ID="grd_cancel" CssClass="table table-striped table-bordered dt-responsive nowrap"
                         AutoGenerateColumns="False" runat="server" DataKeyNames="lid" ClientIDMode="Static" OnPreRender="grd_cancel_PreRender">
                         <Columns>

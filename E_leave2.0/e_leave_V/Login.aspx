@@ -28,6 +28,7 @@
 
     <link href="assets/V2/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/V2/assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/core_custom.css" rel="stylesheet" />
     <link href="assets/V2/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="assets/V2/assets/css/components.css" rel="stylesheet" type="text/css" />
     <link href="assets/V2/assets/css/pages.css" rel="stylesheet" type="text/css" />
@@ -45,8 +46,12 @@
 </head>
 <body>
     <div class="wrapper-page">
-
-        <div class="card-box">
+        <%--Overlay : START--%>
+        <div id="myNav" class="overlay">
+            <div class="validators"></div>
+        </div>
+        <%--Overlay : END--%>
+        <div class="card-box" id="log_cont">
             <div class="text-center">
                 <a href="#" class="logo-lg"><i class="fa fa-internet-explorer"></i><span>- Leave</span> </a>
             </div>
@@ -72,7 +77,7 @@
 
                 <div class="form-group text-right m-t-20">
                     <div class="col-xs-12">
-                        <asp:Button ID="logi" CssClass="btn btn-primary btn-custom w-md waves-light" runat="server" Text="Log In" OnClientClick="LogV()" OnClick="logi_Click"/>
+                        <asp:Button ID="logi" CssClass="btn btn-primary btn-custom w-md waves-light" runat="server" Text="Log In" OnClientClick="LogV()" OnClick="logi_Click" />
                     </div>
                 </div>
                 <div class="form-group m-t-30">
@@ -114,6 +119,11 @@
             Login.init();
         }
 
+    </script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('#myNav').fadeOut('slow');
+        });
     </script>
     <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 </body>

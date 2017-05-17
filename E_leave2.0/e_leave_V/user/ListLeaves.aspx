@@ -84,6 +84,28 @@
             </div>
             <div class="row">
                 <div class="card-box">
+                    <div class="table-responsive">
+                    <table runat="server" id="log_leaves" class="table table-striped table-bordered dt-responsive nowrap dumm">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Leave Type</th>
+                                <th>Applied On</th>
+                                <th>Dates Applied</th>
+                                <th>Period</th>
+                                <th>Reject Reason</th>
+                                <th>Status</th>
+                                <th>Operation</th>
+                                <th>Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="9" class="ta-center" style="padding: 15px;">No Data Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
                     <asp:GridView ID="grd_leaves" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap" DataKeyNames="lid" ClientIDMode="Static" OnPreRender="grd_leaves_PreRender">
                         <Columns>
                             <asp:TemplateField HeaderText="No.">

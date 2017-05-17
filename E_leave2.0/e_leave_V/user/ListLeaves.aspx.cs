@@ -22,6 +22,7 @@ namespace e_leave_V.user
         public string toemail, mailbody, url = "http://uoa.hummingsoft.com.my:8065/e_leave/ target=\"_blank\"", url2 = "http://192.168.1.65/e_leave/ target=\"_blank\"";
         protected void Page_Load(object sender, EventArgs e)
         {
+            log_leaves.Visible = false;
             if (!IsPostBack)
             {
                 checklogin();
@@ -57,8 +58,15 @@ namespace e_leave_V.user
         {
             bus.userid = int.Parse(Session["user_id"].ToString());
             DataTable dt = bus.fill_grid();
-            grd_leaves.DataSource = dt;
-            grd_leaves.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                grd_leaves.DataSource = dt;
+                grd_leaves.DataBind();
+            }
+            else
+            {
+                log_leaves.Visible = true;
+            }
         }
 
         protected Boolean Isenable(string Status)

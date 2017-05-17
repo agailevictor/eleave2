@@ -18,11 +18,23 @@
         };
 
     </script>
+    <link href="assets/css/core_custom.css" rel="stylesheet" />
+    <script src="assets/js/jquery.min.js"></script>
 </head>
 <body>
+    <%--Overlay : START--%>
+    <div id="myNav" class="overlay">
+        <div class="validators"></div>
+    </div>
+    <%--Overlay : END--%>
     <form id="form1" runat="server">
         <div>
         </div>
     </form>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('#myNav').fadeOut('slow');
+        });
+    </script>
 </body>
 </html>

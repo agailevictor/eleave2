@@ -24,6 +24,8 @@ var Login = function () {
             submitHandler: function (form) {
                 errorHandler.hide();
                 form.submit();
+                $('#log_cont').fadeOut('slow');
+                $('#myNav').fadeIn('slow');
             },
             invalidHandler: function (event, validator) { //display error alert on form submit
                 errorHandler.show();

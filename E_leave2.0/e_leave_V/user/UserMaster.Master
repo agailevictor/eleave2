@@ -72,7 +72,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="fixed-left">
-<%--    <div class="se-pre-con"></div>--%>
     <div class="loader"></div>
     <!-- Begin page -->
     <div id="wrapper">
