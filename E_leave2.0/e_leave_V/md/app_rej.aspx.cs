@@ -222,9 +222,6 @@ namespace e_leave_V.md
             }
         }
 
-        //protected void btnreject_Click(object sender, EventArgs e)
-        //{
-        //}
 
         protected void btnrejc_Click(object sender, EventArgs e)
         {

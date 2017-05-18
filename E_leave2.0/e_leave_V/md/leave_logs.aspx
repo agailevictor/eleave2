@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card-box">
-                        <asp:GridView ID="grd_log" runat="server" CssClass="table table-bordered table-hover" ClientIDMode="Static" AutoGenerateColumns="False" DataKeyNames="lid" OnPreRender="grd_log_PreRender">
+                        <asp:GridView ID="grd_log" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" AutoGenerateColumns="False" DataKeyNames="lid" OnPreRender="grd_log_PreRender">
                             <Columns>
                                 <asp:TemplateField HeaderText="No.">
                                     <ItemTemplate><%# Container.DataItemIndex + 1 %></ItemTemplate>

@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card-box">
-                        <asp:GridView ID="grd_cflistr" runat="server" CssClass="table table-bordered table-hover" ClientIDMode="Static" OnPreRender="grd_cflistr_PreRender"></asp:GridView>
+                        <asp:GridView ID="grd_cflistr" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="grd_cflistr_PreRender"></asp:GridView>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="col-md-8">

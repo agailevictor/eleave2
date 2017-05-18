@@ -13,6 +13,15 @@ namespace e_leave_V.md {
     public partial class app_rej {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// grd_app_rej control.
         /// </summary>
         /// <remarks>
@@ -49,15 +58,6 @@ namespace e_leave_V.md {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// lnkclos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkclos;
-        
-        /// <summary>
         /// txtbreason control.
         /// </summary>
         /// <remarks>
@@ -92,6 +92,15 @@ namespace e_leave_V.md {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnrejc;
+        
+        /// <summary>
+        /// lnkclos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkclos;
         
         /// <summary>
         /// ModalPopupExtender1 control.

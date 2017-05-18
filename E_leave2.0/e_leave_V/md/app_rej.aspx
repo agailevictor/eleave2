@@ -113,6 +113,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <!-- Start content -->
     <div class="content">
         <div class="container">
@@ -180,12 +181,12 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Approve">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-green" OnClick="lnkforward_Click" CausesValidation="False"><i class="glyphicon glyphicon-ok-sign"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-success m-b-5" OnClick="lnkforward_Click" CausesValidation="False"><i class="fa fa-thumbs-o-up"></i></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Reject">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="lnkreject" runat="server" CssClass="btn btn-bricky" OnClick="lnkreject_Click" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>'><i class="glyphicon glyphicon-remove-circle"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkreject" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-danger m-b-5" OnClick="lnkreject_Click" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>'><i class="fa fa-remove"></i></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -212,7 +213,6 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <asp:LinkButton ID="lnkclos" runat="server" CssClass="close clip-close-2"></asp:LinkButton>
                     <h4 class="modal-title">Reject Reason</h4>
                 </div>
                 <div class="modal-body">
@@ -223,7 +223,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btnrejc" runat="server" Text="OK" CssClass="btn btn-default" OnClick="btnrejc_Click" />
+                    <asp:Button ID="btnrejc" runat="server" Text="OK" CssClass="btn btn-primary" OnClick="btnrejc_Click" />
+                    <asp:LinkButton ID="lnkclos" runat="server" CssClass="btn btn-danger"> Close</asp:LinkButton>
                 </div>
             </div>
         </div>
