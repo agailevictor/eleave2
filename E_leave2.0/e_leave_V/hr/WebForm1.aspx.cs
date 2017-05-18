@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace e_leave_V.user
+namespace e_leave_V.hr
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

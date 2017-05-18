@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.0.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -277,6 +281,8 @@
     <Content Include="assets\plugins\fullcalendar\dist\fullcalendar.css" />
     <Content Include="assets\plugins\fullcalendar\dist\fullcalendar.min.js" />
     <Content Include="assets\plugins\gmaps\gmaps.min.js" />
+    <Content Include="assets\plugins\highcharts\exporting.js" />
+    <Content Include="assets\plugins\highcharts\highcharts.js" />
     <Content Include="assets\plugins\ion-rangeslider\ion.rangeSlider.css" />
     <Content Include="assets\plugins\ion-rangeslider\ion.rangeSlider.min.js" />
     <Content Include="assets\plugins\ion-rangeslider\ion.rangeSlider.skinFlat.css" />
@@ -451,15 +457,24 @@
     <Content Include="assets\V2\assets\pages\morris.init.js" />
     <Content Include="assets\V2\assets\pages\nestable.js" />
     <Content Include="Global.asax" />
+    <Content Include="hr\Dash.aspx" />
+    <Content Include="hr\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
+    <Content Include="md\app_rej.aspx" />
+    <Content Include="md\balleave.aspx" />
+    <Content Include="md\cfleave.aspx" />
+    <Content Include="md\Dash.aspx" />
+    <Content Include="md\leavetaken.aspx" />
+    <Content Include="md\leave_logs.aspx" />
+    <Content Include="md\listuser.aspx" />
+    <Content Include="md\WebForm1.aspx" />
     <Content Include="user\cancel.aspx" />
     <Content Include="user\Dash.aspx" />
     <Content Include="user\leaveapply.aspx" />
     <Content Include="user\ListLeaves.aspx" />
     <Content Include="user\WebForm1.aspx" />
-    <Content Include="user\WebForm2.aspx" />
     <Content Include="ViewPdf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -474,6 +489,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="hr\Dash.aspx.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\Dash.aspx.designer.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\hrMaster.Master.cs">
+      <DependentUpon>hrMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\hrMaster.Master.designer.cs">
+      <DependentUpon>hrMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="hr\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -496,7 +532,88 @@
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="md\app_rej.aspx.cs">
+      <DependentUpon>app_rej.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\app_rej.aspx.designer.cs">
+      <DependentUpon>app_rej.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\balleave.aspx.cs">
+      <DependentUpon>balleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\balleave.aspx.designer.cs">
+      <DependentUpon>balleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\cfleave.aspx.cs">
+      <DependentUpon>cfleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\cfleave.aspx.designer.cs">
+      <DependentUpon>cfleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\Dash.aspx.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\Dash.aspx.designer.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\leavetaken.aspx.cs">
+      <DependentUpon>leavetaken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\leavetaken.aspx.designer.cs">
+      <DependentUpon>leavetaken.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\leave_logs.aspx.cs">
+      <DependentUpon>leave_logs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\leave_logs.aspx.designer.cs">
+      <DependentUpon>leave_logs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\listuser.aspx.cs">
+      <DependentUpon>listuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\listuser.aspx.designer.cs">
+      <DependentUpon>listuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\MdMaster.Master.cs">
+      <DependentUpon>MdMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\MdMaster.Master.designer.cs">
+      <DependentUpon>MdMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="md\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports_Common\bal_leave.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bal_leave.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports_Common\cf_leave.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cf_leave.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports_Common\leavestaken.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>leavestaken.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="user\approved.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -556,13 +673,6 @@
     </Compile>
     <Compile Include="user\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPdf.aspx.cs">
       <DependentUpon>ViewPdf.aspx</DependentUpon>
@@ -634,6 +744,8 @@
     <Content Include="assets\V2\assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\V2\assets\fonts\weathericons-regular-webfontd41d.eot" />
     <Content Include="user\UserMaster.Master" />
+    <Content Include="md\MdMaster.Master" />
+    <Content Include="hr\hrMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -648,12 +760,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="hr\" />
-    <Folder Include="md\" />
     <Folder Include="pdf\" />
     <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports_Common\bal_leave.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bal_leave.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_Common\cf_leave.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cf_leave.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_Common\leavestaken.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>leavestaken.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="user\approved.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>approved.cs</LastGenOutput>

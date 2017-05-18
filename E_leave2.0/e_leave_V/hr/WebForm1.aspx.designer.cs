@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace e_leave_V.user
+namespace e_leave_V.hr
 {
 
 
-    public partial class WebForm2
+    public partial class WebForm1
     {
     }
 }

@@ -79,11 +79,11 @@ namespace e_leave_V
                 }
                 else if (Session["role"].ToString() == "HR")
                 {
-                    Response.Redirect("~/hr/hrdash");
+                    Response.Redirect("~/hr/Dash");
                 }
                 else if (Session["role"].ToString() == "Management")
                 {
-                    Response.Redirect("~/md/dash");
+                    Response.Redirect("~/md/Dash");
                 }
                 else
                 {

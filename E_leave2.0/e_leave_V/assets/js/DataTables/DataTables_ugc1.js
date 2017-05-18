@@ -7,7 +7,7 @@
         var oTable = $('#grd_users').dataTable({
             "aoColumnDefs": [{
                 'bSortable': false,
-                "aTargets": [0, 9, 10]
+                "aTargets": [0]
             }],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
