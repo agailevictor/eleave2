@@ -457,13 +457,17 @@
     <Content Include="assets\V2\assets\pages\morris.init.js" />
     <Content Include="assets\V2\assets\pages\nestable.js" />
     <Content Include="Global.asax" />
+    <Content Include="hr\balleave.aspx" />
+    <Content Include="hr\cfleave.aspx" />
     <Content Include="hr\Dash.aspx" />
+    <Content Include="hr\leavetaken.aspx" />
     <Content Include="hr\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="md\app_rej.aspx" />
     <Content Include="md\balleave.aspx" />
+    <Content Include="md\cancelappr.aspx" />
     <Content Include="md\cfleave.aspx" />
     <Content Include="md\Dash.aspx" />
     <Content Include="md\leavetaken.aspx" />
@@ -490,6 +494,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="hr\balleave.aspx.cs">
+      <DependentUpon>balleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\balleave.aspx.designer.cs">
+      <DependentUpon>balleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\cfleave.aspx.cs">
+      <DependentUpon>cfleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\cfleave.aspx.designer.cs">
+      <DependentUpon>cfleave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -503,6 +521,13 @@
     </Compile>
     <Compile Include="hr\hrMaster.Master.designer.cs">
       <DependentUpon>hrMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="hr\leavetaken.aspx.cs">
+      <DependentUpon>leavetaken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\leavetaken.aspx.designer.cs">
+      <DependentUpon>leavetaken.aspx</DependentUpon>
     </Compile>
     <Compile Include="hr\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -545,6 +570,13 @@
     </Compile>
     <Compile Include="md\balleave.aspx.designer.cs">
       <DependentUpon>balleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md\cancelappr.aspx.cs">
+      <DependentUpon>cancelappr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\cancelappr.aspx.designer.cs">
+      <DependentUpon>cancelappr.aspx</DependentUpon>
     </Compile>
     <Compile Include="md\cfleave.aspx.cs">
       <DependentUpon>cfleave.aspx</DependentUpon>

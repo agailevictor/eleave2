@@ -78,7 +78,6 @@ namespace e_leave_V.md
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.xls";
                 Response.Write("<b>Balanace Leave Available as on :" + DateTime.Now.ToString("dd/MM/yyyy") + "</b><br>");
-                //Response.Write("<tr colspan=3> <td><b> Zone - Age Wise Outstanding Report Greater Than - " + txtmonth.Text + " months </td></tr>");
                 StringWriter StringWriter = new System.IO.StringWriter();
                 HtmlTextWriter HtmlTextWriter = new HtmlTextWriter(StringWriter);
                 grid.RenderControl(HtmlTextWriter);

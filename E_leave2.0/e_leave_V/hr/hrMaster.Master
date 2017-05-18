@@ -130,8 +130,8 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="leaves" runat="server"><i class="fa fa-paper-plane"></i><span>Leaves</span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li id="leaves3" runat="server"><a href="ListLeaves">Apply</a></li>
-                                <li id="leaves2" runat="server"><a href="cancel">Cancel Approved</a></li>
+                                <li id="leaves3" runat="server"><a href="#">Apply</a></li>
+                                <li id="leaves2" runat="server"><a href="#">Cancel Approved</a></li>
                                 <li id="leaves4" runat="server"><a href="#">Forward Leaves</a></li>
                                 <li id="leaves5" runat="server"><a href="#">Forward Cancel Request</a></li>
                                 <li id="leaves6" runat="server"><a href="#">Download Leaves</a></li>
@@ -151,9 +151,9 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="rep" runat="server"><i class="fa fa-bar-chart-o"></i><span>Reports</span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li id="rep1" runat="server"><a href="#">Leaves Taken</a></li>
-                                <li id="rep2" runat="server"><a href="#">Balance Leaves</a></li>
-                                <li id="rep3" runat="server"><a href="#">Carryforward</a></li>
+                                <li id="rep1" runat="server"><a href="leavetaken">Leaves Taken</a></li>
+                                <li id="rep2" runat="server"><a href="balleave">Balance Leaves</a></li>
+                                <li id="rep3" runat="server"><a href="cfleave">Carryforward</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -212,7 +212,6 @@
     </script>
 
     <!-- jQuery  -->
-    <%--    <script src="../assets/js/jquery.min.js"></script>--%>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
@@ -226,14 +225,13 @@
 
     <script src="../assets/js/jquery.core.js"></script>
     <script src="../assets/js/jquery.app.js"></script>
-    <script src="../assets/js/DataTables/DataTables_ug2.js"></script>
+    <script src="../assets/js/DataTables/DataTables_ugc1.js"></script>
 
     <!-- DataTables -->
     <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
     <script src="../assets/plugins/datatables/dataTables.buttons.min.js"></script>
     <script src="../assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-    <%--<script src="../assets/plugins/datatables/jszip.min.js"></script>--%>
     <script src="../assets/plugins/datatables/pdfmake.min.js"></script>
     <script src="../assets/plugins/datatables/vfs_fonts.js"></script>
     <script src="../assets/plugins/datatables/buttons.html5.min.js"></script>

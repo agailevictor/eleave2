@@ -131,7 +131,7 @@
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <li id="leaves3" runat="server"><a href="app_rej">Approve / Reject</a></li>
-                                <li id="leaves2" runat="server"><a href="#">Cancel Approved</a></li>
+                                <li id="leaves2" runat="server"><a href="cancelappr">Cancel Approved</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">

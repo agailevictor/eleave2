@@ -4,17 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using e_leave_C;
-using System.Web.Services;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using CrystalDecisions.Web;
+using System.Data;
 using System.IO;
+using e_leave_C;
 
-namespace e_leave_V.md
+namespace e_leave_V.hr
 {
-    public partial class leavetaken : System.Web.UI.Page
+    public partial class balleave : System.Web.UI.Page
     {
         bus_eleave_ugc1 bus = new bus_eleave_ugc1();
         ReportDocument rd = new ReportDocument();
@@ -31,12 +30,12 @@ namespace e_leave_V.md
             {
                 if (Session["is_login"].ToString() == "t")
                 {
-                    DataTable dt = bus.fetch_leaves_taken();
+                    DataTable dt = bus.fetch_leaves_balance();
                     if (dt.Rows.Count > 0)
                     {
 
-                        grd_ltaken.DataSource = dt;
-                        grd_ltaken.DataBind();
+                        grd_bal.DataSource = dt;
+                        grd_bal.DataBind();
                     }
                     else
                     {
@@ -56,25 +55,18 @@ namespace e_leave_V.md
             }
         }
 
-        protected void export_pdf()
+        protected void grd_bal_PreRender(object sender, EventArgs e)
         {
-            DataTable dtpdf = bus.fetch_leaves_taken();
-            if (dtpdf.Rows.Count > 0)
+            if (grd_bal.Rows.Count > 0)
             {
-                rd.Load(Server.MapPath(Request.ApplicationPath) + "/Reports_Common/leavestaken.rpt");
-                rd.SetDataSource(dtpdf);
-                rd.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "Leaves_Taken");
-                dtpdf.Dispose();
-            }
-            else
-            {
-
+                grd_bal.UseAccessibleHeader = true;
+                grd_bal.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
 
         protected void export_excel()
         {
-            DataTable dtexl = bus.fetch_leaves_taken();
+            DataTable dtexl = bus.fetch_leaves_balance();
             if (dtexl.Rows.Count > 0)
             {
                 DataGrid grid = new DataGrid();
@@ -82,10 +74,10 @@ namespace e_leave_V.md
                 grid.DataSource = dtexl;
                 grid.DataBind();
                 Response.Clear();
-                Response.AddHeader("content-disposition", "attachment;filename=Leaves_Taken.xls");
+                Response.AddHeader("content-disposition", "attachment;filename=Balance_Leave.xls");
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.xls";
-                Response.Write("<b>Leaves Taken as on :" + DateTime.Now.ToString("dd/MM/yyyy") + "</b><br>");
+                Response.Write("<b>Balanace Leave Available as on :" + DateTime.Now.ToString("dd/MM/yyyy") + "</b><br>");
                 StringWriter StringWriter = new System.IO.StringWriter();
                 HtmlTextWriter HtmlTextWriter = new HtmlTextWriter(StringWriter);
                 grid.RenderControl(HtmlTextWriter);
@@ -99,12 +91,19 @@ namespace e_leave_V.md
             }
         }
 
-        protected void grd_ltaken_PreRender(object sender, EventArgs e)
+        protected void export_pdf()
         {
-            if (grd_ltaken.Rows.Count > 0)
+            DataTable dtpdf = bus.fetch_leaves_balance();
+            if (dtpdf.Rows.Count > 0)
             {
-                grd_ltaken.UseAccessibleHeader = true;
-                grd_ltaken.HeaderRow.TableSection = TableRowSection.TableHeader;
+                rd.Load(Server.MapPath(Request.ApplicationPath) + "/Reports_Common/bal_leave.rpt");
+                rd.SetDataSource(dtpdf);
+                rd.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "Balance_Leave");
+                dtpdf.Dispose();
+            }
+            else
+            {
+
             }
         }
 
