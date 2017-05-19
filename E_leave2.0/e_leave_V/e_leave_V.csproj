@@ -458,9 +458,13 @@
     <Content Include="assets\V2\assets\pages\nestable.js" />
     <Content Include="Global.asax" />
     <Content Include="hr\balleave.aspx" />
+    <Content Include="hr\cancel.aspx" />
     <Content Include="hr\cfleave.aspx" />
     <Content Include="hr\Dash.aspx" />
+    <Content Include="hr\forward.aspx" />
+    <Content Include="hr\leaveapply.aspx" />
     <Content Include="hr\leavetaken.aspx" />
+    <Content Include="hr\ListLeaves.aspx" />
     <Content Include="hr\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -501,6 +505,13 @@
     <Compile Include="hr\balleave.aspx.designer.cs">
       <DependentUpon>balleave.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hr\cancel.aspx.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\cancel.aspx.designer.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\cfleave.aspx.cs">
       <DependentUpon>cfleave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -515,6 +526,13 @@
     <Compile Include="hr\Dash.aspx.designer.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hr\forward.aspx.cs">
+      <DependentUpon>forward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\forward.aspx.designer.cs">
+      <DependentUpon>forward.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\hrMaster.Master.cs">
       <DependentUpon>hrMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -522,12 +540,26 @@
     <Compile Include="hr\hrMaster.Master.designer.cs">
       <DependentUpon>hrMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="hr\leaveapply.aspx.cs">
+      <DependentUpon>leaveapply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\leaveapply.aspx.designer.cs">
+      <DependentUpon>leaveapply.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\leavetaken.aspx.cs">
       <DependentUpon>leavetaken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="hr\leavetaken.aspx.designer.cs">
       <DependentUpon>leavetaken.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\ListLeaves.aspx.cs">
+      <DependentUpon>ListLeaves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\ListLeaves.aspx.designer.cs">
+      <DependentUpon>ListLeaves.aspx</DependentUpon>
     </Compile>
     <Compile Include="hr\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
