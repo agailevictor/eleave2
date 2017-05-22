@@ -434,7 +434,7 @@
                                 type: "POST",
                                 contentType: "application/json",
                                 data: '{"userid":"' + userid + '","typ":"' + typ + '","per":"' + per + '","sd":"' + sd + '","ed":"' + ed + '","region":"' + region + '"}',
-                                url: "leaveapply.aspx/in_out_maternity",
+                                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("leaveapply.aspx/in_out_maternity")%>',
                                 dataType: "json",
                                 success: function (data) {
                                     if (data.d == 1) {

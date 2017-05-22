@@ -31,6 +31,15 @@ namespace e_leave_V.hr {
         protected global::System.Web.UI.WebControls.TextBox txtuname;
         
         /// <summary>
+        /// lblun control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblun;
+        
+        /// <summary>
         /// txtemail control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace e_leave_V.hr {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemail;
+        
+        /// <summary>
+        /// lblem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblem;
         
         /// <summary>
         /// ddlgender control.
@@ -110,24 +128,6 @@ namespace e_leave_V.hr {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlregion;
-        
-        /// <summary>
-        /// lblun control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblun;
-        
-        /// <summary>
-        /// lblem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblem;
         
         /// <summary>
         /// btnupuser control.

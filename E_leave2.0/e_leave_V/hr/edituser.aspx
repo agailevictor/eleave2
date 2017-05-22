@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edituser.aspx.cs" Inherits="e_leave_V.hr.edituser" MasterPageFile="~/hr/hrMaster.Master" EnableEventValidation="false"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edituser.aspx.cs" Inherits="e_leave_V.hr.edituser" MasterPageFile="~/hr/hrMaster.Master" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -127,7 +127,7 @@
         function checkusername_edit() {
             $('#lblun').hide();
             $('#btnupuser').prop("disabled", false);
-            $('#pulsate-regularun').pulsate("destroy");
+            $('#txtuname').pulsate("destroy");
             $('#pulsate-regularun').hide();
             var uname, editid;
             var data = {};
@@ -144,14 +144,14 @@
                         if (data.d == 1) {
                             $('#lblun').hide();
                             $('#btnupuser').prop("disabled", false);
-                            $('#pulsate-regularun').pulsate("destroy");
+                            $('#txtuname').pulsate("destroy");
                             $('#pulsate-regularun').hide();
                         }
                         else {
                             $('#btnupuser').prop("disabled", true);
                             $('#pulsate-regularun').show();
                             $('#lblun').show();
-                            $('#pulsate-regularun').pulsate({
+                            $('#txtuname').pulsate({
                                 color: '#C43C35', // set the color of the pulse
                                 reach: 20, // how far the pulse goes in px
                                 speed: 1000, // how long one pulse takes in ms
@@ -171,7 +171,7 @@
 
                 $('#lblun').hide();
                 $('#btnupuser').prop("disabled", false);
-                $('#pulsate-regularun').pulsate("destroy");
+                $('#txtuname').pulsate("destroy");
                 $('#pulsate-regularun').hide();
             }
         }
@@ -179,7 +179,7 @@
 
     <script type="text/javascript">
         function checkemail_edit() {
-            $('#pulsate-regularem').pulsate("destroy");
+            $('#txtemail').pulsate("destroy");
             var email, editid;
             var data = {};
             email = $('#txtemail').val();
@@ -196,14 +196,14 @@
                         if (data.d == 1) {
                             $('#lblem').hide();
                             $('#btnupuser').prop("disabled", false);
-                            $('#pulsate-regularem').pulsate("destroy");
+                            $('#txtemail').pulsate("destroy");
                             $('#pulsate-regularem').hide();
                         }
                         else {
                             $('#btnupuser').prop("disabled", true);
                             $('#pulsate-regularem').show();
                             $('#lblem').show();
-                            $('#pulsate-regularem').pulsate({
+                            $('#txtemail').pulsate({
                                 color: '#C43C35', // set the color of the pulse
                                 reach: 20, // how far the pulse goes in px
                                 speed: 1000, // how long one pulse takes in ms
@@ -223,7 +223,7 @@
 
                 $('#lblem').hide();
                 $('#btnupuser').prop("disabled", false);
-                $('#pulsate-regularem').pulsate("destroy");
+                $('#txtemail').pulsate("destroy");
                 $('#pulsate-regularem').hide();
             }
         }
@@ -374,12 +374,18 @@
                                         Username <span class="symbol required"></span>
                                     </label>
                                     <asp:TextBox ID="txtuname" runat="server" CssClass="form-control" ClientIDMode="Static" onchange="checkusername_edit()"></asp:TextBox>
+                                    <div id="pulsate-regularun" style="padding: 5px; width: 202px; display: none">
+                                        <asp:Label ID="lblun" runat="server" Text="Username Already Taken" ClientIDMode="Static" ForeColor="Black"></asp:Label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
                                         Email <span class="symbol required"></span>
                                     </label>
                                     <asp:TextBox ID="txtemail" runat="server" CssClass="form-control" ClientIDMode="Static" onchange="checkemail_edit()"></asp:TextBox>
+                                    <div id="pulsate-regularem" style="padding: 5px; width: 202px; display: none">
+                                        <asp:Label ID="lblem" runat="server" Text="Email can't be same" ClientIDMode="Static" ForeColor="Black"></asp:Label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
@@ -399,6 +405,8 @@
                                     </label>
                                     <asp:TextBox ID="txtdob" runat="server" CssClass="chosen-disabled form-control" BackColor="White" ClientIDMode="Static"></asp:TextBox>
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">
                                         Department <span class="symbol required"></span>
@@ -428,50 +436,6 @@
                                         Region <span class="symbol required"></span>
                                     </label>
                                     <asp:DropDownList ID="ddlregion" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="region" DataValueField="region_id"></asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <div id="pulsate-regularun" style="padding: 5px; width: 202px; display: none">
-                                        <asp:Label ID="lblun" runat="server" Text="Username Already Taken" ClientIDMode="Static" ForeColor="Black"></asp:Label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <div id="pulsate-regularem" style="padding: 5px; width: 202px; display: none">
-                                        <asp:Label ID="lblem" runat="server" Text="Email can't be same" ClientIDMode="Static" ForeColor="Black"></asp:Label>
-                                    </div>
                                 </div>
                             </div>
                         </div>

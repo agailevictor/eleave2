@@ -68,7 +68,7 @@
 
                 e.preventDefault();
 
-                alert("right click is disabled"); //not recommended to give alert message
+                alert("Right Click is Disabled"); //not recommended to give alert message
             });
 
         });
@@ -292,7 +292,7 @@
                 type: "POST",
                 contentType: "application/json",
                 data: "{}",
-                url: "hrdash.aspx/updatealerts",
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Dash.aspx/updatealerts")%>',
                 dataType: "json",
                 success: function (data) {
                     if (data.d > 0) {
@@ -316,7 +316,7 @@
                 type: "POST",
                 contentType: "application/json",
                 data: '{"userid":"' + userid + '"}',
-                url: "hrdash.aspx/updatealerts1",
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Dash.aspx/updatealerts1")%>',
                 dataType: "json",
                 success: function (data) {
                     if (data.d > 0) {
@@ -339,7 +339,7 @@
                 type: "POST",
                 contentType: "application/json",
                 data: "{}",
-                url: "hrdash.aspx/updatealerts2",
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Dash.aspx/updatealerts2")%>',
                 dataType: "json",
                 success: function (data) {
                     if (data.d > 0) {

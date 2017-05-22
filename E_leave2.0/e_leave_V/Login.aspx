@@ -103,7 +103,6 @@
     <script src="assets/V2/assets/js/jquery.slimscroll.js"></script>
     <script src="assets/V2/assets/js/jquery.blockUI.js"></script>
     <script src="assets/V2/assets/js/waves.js"></script>
-    <script src="assets/V2/assets/V2/assets/js/wow.min.js"></script>
     <script src="assets/V2/assets/js/jquery.nicescroll.js"></script>
     <script src="assets/V2/assets/js/jquery.scrollTo.min.js"></script>
 

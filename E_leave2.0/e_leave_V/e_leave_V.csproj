@@ -357,6 +357,7 @@
     <Content Include="assets\plugins\select2\select2x2.png" />
     <Content Include="assets\plugins\simple-text-rotator\jquery.simple-text-rotator.min.js" />
     <Content Include="assets\plugins\skyicons\skycons.min.js" />
+    <Content Include="assets\plugins\spell_check\include.js" />
     <Content Include="assets\plugins\summernote\dist\summernote.css" />
     <Content Include="assets\plugins\summernote\dist\summernote.min.js" />
     <Content Include="assets\plugins\swal\sweetalert-dev.js" />

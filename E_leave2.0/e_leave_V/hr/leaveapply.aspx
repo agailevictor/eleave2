@@ -201,8 +201,16 @@
     </script>
     <script type="text/javascript">
         function hideshowfup() {
-            $('#pulsate-regulario').pulsate("destroy");
+            $('#txtsdate').pulsate("destroy");
+            $('#txtedate').pulsate("destroy");
             $('#pulsate-regulario').hide();
+
+            $('#txtdate').pulsate("destroy");
+            $('#pulsate-regulario1').hide();
+
+            $('#lblio').hide();
+            $('#lblio1').hide();
+
             var sdate = "+2d";
             var yr = new Date().getFullYear() + '';
             edate = "31-12-" + yr;
@@ -268,8 +276,14 @@
                 $('#dates').show();
                 $("#ddlper").prop("selectedIndex", 0);
                 $('#lblio').hide()
-                $('#pulsate-regulario').pulsate("destroy");
+                $('#txtsdate').pulsate("destroy");
+                $('#txtedate').pulsate("destroy");
                 $('#pulsate-regulario').hide();
+
+                $('#lblio1').hide()
+                $('#txtdate').pulsate("destroy");
+                $('#pulsate-regulario1').hide();
+
                 $('#btnreq').prop("disabled", false);
             }
             else if (chk == 4) { //maternity
@@ -334,10 +348,14 @@
         function reset_period() {
             $('#ddlper').val('');
             $('#lblio').hide();
+            $('#lblio1').hide();
             $('#lblreq').html('');
             $('#lblreq').html('N/A');
-            $('#pulsate-regulario').pulsate("destroy");
+            $('#txtdate').pulsate("destroy");
+            $('#txtsdate').pulsate("destroy");
+            $('#txtedate').pulsate("destroy");
             $('#pulsate-regulario').hide();
+            $('#pulsate-regulario1').hide();
             $('#btnreq').prop("disabled", false);
         }
     </script>
@@ -348,9 +366,15 @@
             region = '<%= Session["region"] %>';
             typ = $('#ddlltype option:selected').val();
             per = $('#ddlper option:selected').val();
+
             $('#lblio').hide();
-            $('#pulsate-regulario').pulsate("destroy");
+            $('#txtsdate').pulsate("destroy");
+            $('#txtedate').pulsate("destroy");
             $('#pulsate-regulario').hide();
+
+            $('#lblio1').hide();
+            $('#txtdate').pulsate("destroy");
+            $('#pulsate-regulario1').hide();
             var data = {};
 
             if (typ != "" && per != "") {
@@ -370,17 +394,17 @@
                         dataType: "json",
                         success: function (data) {
                             if (data.d == 1) {
-                                $('#lblio').hide();
-                                $('#pulsate-regulario').pulsate("destroy");
-                                $('#pulsate-regulario').hide();
+                                $('#lblio1').hide();
+                                $('#txtdate').pulsate("destroy");
+                                $('#pulsate-regulario1').hide();
                                 $('#btnreq').prop("disabled", false);
                             }
                             else if (data.d == 3) {
-                                $('#pulsate-regulario').show();
-                                $('#lblio').html('Leave Count is insufficiant');
-                                $('#lblio').show();
+                                $('#pulsate-regulario1').show();
+                                $('#lblio1').html('Leave Count is insufficiant');
+                                $('#lblio1').show();
                                 $('#btnreq').prop("disabled", true);
-                                $('#pulsate-regulario').pulsate({
+                                $('#txtdate').pulsate({
                                     color: '#ee6e73', // set the color of the pulse
                                     reach: 20, // how far the pulse goes in px
                                     speed: 1000, // how long one pulse takes in ms
@@ -391,11 +415,11 @@
                                 });
                             }
                             else if (data.d == 4) {
-                                $('#pulsate-regulario').show();
-                                $('#lblio').html('3 Full days Mandatory');
-                                $('#lblio').show();
+                                $('#pulsate-regulario1').show();
+                                $('#lblio1').html('3 Full days Mandatory');
+                                $('#lblio1').show();
                                 $('#btnreq').prop("disabled", true);
-                                $('#pulsate-regulario').pulsate({
+                                $('#txtdate').pulsate({
                                     color: '#ee6e73', // set the color of the pulse
                                     reach: 20, // how far the pulse goes in px
                                     speed: 1000, // how long one pulse takes in ms
@@ -419,7 +443,8 @@
                     ed = $('#txtedate').val();
                     pert = $('#ddlper option:selected').text();
                     $('#lblio').hide();
-                    $('#pulsate-regulario').pulsate("destroy");
+                    $('#txtsdate').pulsate("destroy");
+                    $('#txtedate').pulsate("destroy");
                     $('#pulsate-regulario').hide();
 
                     $.ajax({
@@ -434,12 +459,13 @@
                                 type: "POST",
                                 contentType: "application/json",
                                 data: '{"userid":"' + userid + '","typ":"' + typ + '","per":"' + per + '","sd":"' + sd + '","ed":"' + ed + '","region":"' + region + '"}',
-                                url: "leaveapply.aspx/in_out_maternity",
+                                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("leaveapply.aspx/in_out_maternity")%>',
                                 dataType: "json",
                                 success: function (data) {
                                     if (data.d == 1) {
                                         $('#lblio').hide();
-                                        $('#pulsate-regulario').pulsate("destroy");
+                                        $('#txtsdate').pulsate("destroy");
+                                        $('#txtedate').pulsate("destroy");
                                         $('#pulsate-regulario').hide();
                                         $('#btnreq').prop("disabled", false);
                                     }
@@ -448,7 +474,16 @@
                                         $('#lblio').html('Leave Count is insufficiant');
                                         $('#lblio').show();
                                         $('#btnreq').prop("disabled", true);
-                                        $('#pulsate-regulario').pulsate({
+                                        $('#txtsdate').pulsate({
+                                            color: '#ee6e73', // set the color of the pulse
+                                            reach: 20, // how far the pulse goes in px
+                                            speed: 1000, // how long one pulse takes in ms
+                                            pause: 0, // how long the pause between pulses is in ms
+                                            glow: true, // if the glow should be shown too
+                                            repeat: true, // will repeat forever if true, if given a number will repeat for that many times
+                                            onHover: false // if true only pulsate if user hovers over the element
+                                        });
+                                        $('#txtedate').pulsate({
                                             color: '#ee6e73', // set the color of the pulse
                                             reach: 20, // how far the pulse goes in px
                                             speed: 1000, // how long one pulse takes in ms
@@ -463,7 +498,16 @@
                                         $('#lblio').html('60 Full days Mandatory');
                                         $('#lblio').show();
                                         $('#btnreq').prop("disabled", true);
-                                        $('#pulsate-regulario').pulsate({
+                                        $('#txtsdate').pulsate({
+                                            color: '#ee6e73', // set the color of the pulse
+                                            reach: 20, // how far the pulse goes in px
+                                            speed: 1000, // how long one pulse takes in ms
+                                            pause: 0, // how long the pause between pulses is in ms
+                                            glow: true, // if the glow should be shown too
+                                            repeat: true, // will repeat forever if true, if given a number will repeat for that many times
+                                            onHover: false // if true only pulsate if user hovers over the element
+                                        });
+                                        $('#txtedate').pulsate({
                                             color: '#ee6e73', // set the color of the pulse
                                             reach: 20, // how far the pulse goes in px
                                             speed: 1000, // how long one pulse takes in ms
@@ -493,16 +537,26 @@
                     dv2 = (dv1.match(/,/g) || []).length + 1;
                     $('#lblreq').html(dv2 + ' ' + pert);
                     $('#lblio').hide();
-                    $('#pulsate-regulario').pulsate("destroy");
+                    $('#lblio').html('');
+                    $('#lblio1').hide();
+                    $('#lblio1').html('');
+                    $('#txtdate').pulsate("destroy");
+                    $('#txtsdate').pulsate("destroy");
+                    $('#txtedate').pulsate("destroy");
                     $('#pulsate-regulario').hide();
+                    $('#pulsate-regulario1').hide();
                     $('#btnreq').prop("disabled", false);
                 }
         }
         else {
             $('#lblreq').html('N/A');
             $('#lblio').hide();
-            $('#pulsate-regulario').pulsate("destroy");
+            $('#lblio1').hide();
+            $('#txtdate').pulsate("destroy");
+            $('#txtsdate').pulsate("destroy");
+            $('#txtedate').pulsate("destroy");
             $('#pulsate-regulario').hide();
+            $('#pulsate-regulario1').hide();
             $('#btnreq').prop("disabled", false);
         }
     }
@@ -604,6 +658,9 @@
                                     </label>
                                     <asp:TextBox ID="txtdate" runat="server" CssClass="chosen-disabled form-control"
                                         ClientIDMode="Static" BackColor="White" onchange="reset_period()"></asp:TextBox>
+                                    <div id="pulsate-regulario1" style="padding: 5px; width: 202px; display: none">
+                                        <asp:Label ID="lblio1" runat="server" ClientIDMode="Static" ForeColor="#e6674a"></asp:Label>
+                                    </div>
                                 </div>
                                 <div class="form-group" id="dateranges" style="display: none">
                                     <label class="control-label">
@@ -622,6 +679,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="pulsate-regulario" style="padding: 5px; width: 202px; display: none">
+                                        <asp:Label ID="lblio" runat="server" ClientIDMode="Static" ForeColor="#e6674a"></asp:Label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
@@ -631,6 +691,9 @@
                                         ClientIDMode="Static" DataTextField="period" DataValueField="period_id" onchange="in_or_out()">
                                     </asp:DropDownList>
                                 </div>
+                            </div>
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">
                                         Selected
@@ -668,82 +731,6 @@
                                     <p class="help-block">
                                         Allowed File Type is PDF. <span class="clip-file-pdf"></span>
                                     </p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <div id="pulsate-regulario" style="padding: 5px; width: 202px; display: none">
-                                        <asp:Label ID="lblio" runat="server" ClientIDMode="Static" ForeColor="Black"></asp:Label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">
-                                    </label>
                                 </div>
                             </div>
 
