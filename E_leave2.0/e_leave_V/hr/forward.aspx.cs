@@ -38,12 +38,12 @@ namespace e_leave_V.hr
                 }
                 else
                 {
-                    Response.Redirect("~/unauthorised.aspx");
+                    Response.Redirect("~/404");
                 }
             }
             else
             {
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Login");
             }
         }
 

@@ -98,12 +98,18 @@
                         </div>
 
                         <ul class="nav navbar-nav navbar-right pull-right">
-
                             <li class="dropdown hidden-xs">
-                                <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light"
-                                    data-toggle="dropdown" aria-expanded="true">
+                                <a href="app_rej" class="dropdown-toggle waves-effect waves-light"
+                                   aria-expanded="true">
                                     <i class="md md-notifications"></i><span
                                         class="badge badge-xs badge-pink" id="info"></span>
+                                </a>
+                            </li>
+                            <li class="dropdown hidden-xs">
+                                <a href="cancelappr" class="dropdown-toggle waves-effect waves-light"
+                                    aria-expanded="true">
+                                    <i class="md md-info"></i><span
+                                        class="badge badge-xs badge-pink" id="info1"></span>
                                 </a>
                             </li>
                         </ul>
@@ -130,7 +136,7 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="leaves" runat="server"><i class="fa fa-paper-plane"></i><span>Leaves</span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li id="leaves3" runat="server"><a href="app_rej">Approve / Reject</a></li>
+                                <li id="leaves1" runat="server"><a href="app_rej">Approve / Reject</a></li>
                                 <li id="leaves2" runat="server"><a href="cancelappr">Cancel Approved</a></li>
                             </ul>
                         </li>
@@ -165,13 +171,13 @@
                         <span class="user-info-span">
                             <asp:Label ID="lbluser" runat="server" CssClass="m-t-0 m-b-0"></asp:Label>
                             <p class="text-muted m-b-0">
-                                <small><i class="fa fa-circle text-success"></i><span>Online</span></small>
+                                <small><i class="fa fa-circle text-success"></i><span> Online</span></small>
                             </p>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i>Profile</a></li>
-                        <li><a href="../Logout"><i class="md md-settings-power"></i>Logout</a></li>
+                        <li><a href="Profile"><i class="md md-face-unlock"></i> Profile</a></li>
+                        <li><a href="../Logout"><i class="md md-settings-power"></i> Logout</a></li>
                     </ul>
 
                 </div>
@@ -203,6 +209,8 @@
     <script type="text/javascript">
         jQuery(document).ready(function () {
             $(".loader").fadeOut("slow");
+            updateAlerts();
+            updateAlerts2();
         });
     </script>
 
@@ -241,6 +249,7 @@
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/leaves_user.js"></script>
+    <script src="../assets/js/Validations/updateprofile.js"></script>
 
     <%--Date Picker--%>
     <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
@@ -251,6 +260,51 @@
     <%--HighCharts--%>
     <script src="../assets/plugins/highcharts/highcharts.js"></script>
     <script src="../assets/plugins/highcharts/exporting.js"></script>
+
+    <script type="text/javascript">
+        function updateAlerts() {
+           $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{}",
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Dash.aspx/updatealerts")%>',
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        $('#info').text(data.d);
+                    }
+                    else {
+                        $('#info').text("");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+        setInterval(updateAlerts, 10000); // 10 seconds
+    </script>
+    <script type="text/javascript">
+        function updateAlerts2() {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{}",
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Dash.aspx/updatealerts2")%>',
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        $('#info1').text(data.d);
+                    }
+                    else {
+                        $('#info1').text("");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+        setInterval(updateAlerts2, 10000); // 10 seconds
+    </script>
 </body>
 </html>
 

@@ -72,5 +72,20 @@ namespace e_leave_V.md
             }
             return ls;
         }
+        [WebMethod]
+        public static int updatealerts()
+        {
+            bus_eleave_ugc1 bus = new bus_eleave_ugc1();
+            int r = bus.fetchalerts_md();
+            return r;
+        }
+
+        [WebMethod]
+        public static int updatealerts2()
+        {
+            bus_eleave_ugc1 bus = new bus_eleave_ugc1();
+            int r = bus.fetchalerts_md2();
+            return r;
+        }
     }
 }

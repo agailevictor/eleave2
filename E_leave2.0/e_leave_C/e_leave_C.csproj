@@ -41,7 +41,10 @@
   <ItemGroup>
     <Compile Include="bus_eleave_ugc1.cs" />
     <Compile Include="bus_eleave_ugc2.cs" />
+    <Compile Include="datamapper.cs" />
+    <Compile Include="Desi.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="grade.cs" />
     <Compile Include="leaveall.cs" />
     <Compile Include="Leaves.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,141 +10,123 @@
 namespace e_leave_V.md {
     
     
-    public partial class MdMaster {
+    public partial class Profile {
         
         /// <summary>
-        /// head control.
+        /// lblname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblname;
         
         /// <summary>
-        /// dash control.
+        /// lbluname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor dash;
+        protected global::System.Web.UI.WebControls.Label lbluname;
         
         /// <summary>
-        /// leaves control.
+        /// lblemail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor leaves;
+        protected global::System.Web.UI.WebControls.Label lblemail;
         
         /// <summary>
-        /// leaves1 control.
+        /// lblgender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves1;
+        protected global::System.Web.UI.WebControls.Label lblgender;
         
         /// <summary>
-        /// leaves2 control.
+        /// lbldoj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves2;
+        protected global::System.Web.UI.WebControls.Label lbldoj;
         
         /// <summary>
-        /// sett control.
+        /// lbldep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor sett;
+        protected global::System.Web.UI.WebControls.Label lbldep;
         
         /// <summary>
-        /// sett1 control.
+        /// lbldesg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sett1;
+        protected global::System.Web.UI.WebControls.Label lbldesg;
         
         /// <summary>
-        /// sett2 control.
+        /// lblgrade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sett2;
+        protected global::System.Web.UI.WebControls.Label lblgrade;
         
         /// <summary>
-        /// rep control.
+        /// txtadd1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor rep;
+        protected global::System.Web.UI.WebControls.TextBox txtadd1;
         
         /// <summary>
-        /// rep1 control.
+        /// txtadd2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rep1;
+        protected global::System.Web.UI.WebControls.TextBox txtadd2;
         
         /// <summary>
-        /// rep2 control.
+        /// txtphone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rep2;
+        protected global::System.Web.UI.WebControls.TextBox txtphone;
         
         /// <summary>
-        /// rep3 control.
+        /// lblregion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rep3;
+        protected global::System.Web.UI.WebControls.Label lblregion;
         
         /// <summary>
-        /// lbluser control.
+        /// btnuprofile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbluser;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnuprofile;
     }
 }

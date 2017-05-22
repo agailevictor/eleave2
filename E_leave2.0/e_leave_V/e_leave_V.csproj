@@ -154,6 +154,7 @@
     <Content Include="assets\images\gallery\7.jpg" />
     <Content Include="assets\images\gallery\8.jpg" />
     <Content Include="assets\images\gallery\9.jpg" />
+    <Content Include="assets\images\leaves.jpg" />
     <Content Include="assets\images\loader\35.gif" />
     <Content Include="assets\images\loader\double_loader.GIF" />
     <Content Include="assets\images\loader\loading.gif" />
@@ -190,8 +191,12 @@
     <Content Include="assets\js\jquery.scrollTo.min.js" />
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\modernizr.min.js" />
+    <Content Include="assets\js\Validations\bulkuploadvalidation.js" />
     <Content Include="assets\js\Validations\leaves_user.js" />
     <Content Include="assets\js\Validations\login_valid.js" />
+    <Content Include="assets\js\Validations\RightClick.js" />
+    <Content Include="assets\js\Validations\updateprofile.js" />
+    <Content Include="assets\js\Validations\uservalidation.js" />
     <Content Include="assets\js\waves.js" />
     <Content Include="assets\js\wow.min.js" />
     <Content Include="assets\pages\datatables.editable.init.js" />
@@ -457,14 +462,25 @@
     <Content Include="assets\V2\assets\pages\morris.init.js" />
     <Content Include="assets\V2\assets\pages\nestable.js" />
     <Content Include="Global.asax" />
+    <Content Include="hr\AddUser.aspx" />
+    <Content Include="hr\app_rej_forward.aspx" />
     <Content Include="hr\balleave.aspx" />
     <Content Include="hr\cancel.aspx" />
+    <Content Include="hr\cf.aspx" />
     <Content Include="hr\cfleave.aspx" />
+    <Content Include="hr\Chs.aspx" />
+    <Content Include="hr\Css.aspx" />
     <Content Include="hr\Dash.aspx" />
+    <Content Include="hr\download_all.aspx" />
+    <Content Include="hr\edituser.aspx" />
     <Content Include="hr\forward.aspx" />
+    <Content Include="hr\holidays_upload.aspx" />
     <Content Include="hr\leaveapply.aspx" />
     <Content Include="hr\leavetaken.aspx" />
+    <Content Include="hr\leave_logs.aspx" />
     <Content Include="hr\ListLeaves.aspx" />
+    <Content Include="hr\ListUser.aspx" />
+    <Content Include="hr\Profile.aspx" />
     <Content Include="hr\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -477,11 +493,13 @@
     <Content Include="md\leavetaken.aspx" />
     <Content Include="md\leave_logs.aspx" />
     <Content Include="md\listuser.aspx" />
+    <Content Include="md\Profile.aspx" />
     <Content Include="md\WebForm1.aspx" />
     <Content Include="user\cancel.aspx" />
     <Content Include="user\Dash.aspx" />
     <Content Include="user\leaveapply.aspx" />
     <Content Include="user\ListLeaves.aspx" />
+    <Content Include="user\Profile.aspx" />
     <Content Include="user\WebForm1.aspx" />
     <Content Include="ViewPdf.aspx" />
     <Content Include="Web.config" />
@@ -498,6 +516,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="hr\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\app_rej_forward.aspx.cs">
+      <DependentUpon>app_rej_forward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\app_rej_forward.aspx.designer.cs">
+      <DependentUpon>app_rej_forward.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\balleave.aspx.cs">
       <DependentUpon>balleave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,12 +544,33 @@
     <Compile Include="hr\cancel.aspx.designer.cs">
       <DependentUpon>cancel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hr\cf.aspx.cs">
+      <DependentUpon>cf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\cf.aspx.designer.cs">
+      <DependentUpon>cf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\cfleave.aspx.cs">
       <DependentUpon>cfleave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="hr\cfleave.aspx.designer.cs">
       <DependentUpon>cfleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\Chs.aspx.cs">
+      <DependentUpon>Chs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\Chs.aspx.designer.cs">
+      <DependentUpon>Chs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\Css.aspx.cs">
+      <DependentUpon>Css.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\Css.aspx.designer.cs">
+      <DependentUpon>Css.aspx</DependentUpon>
     </Compile>
     <Compile Include="hr\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
@@ -526,12 +579,33 @@
     <Compile Include="hr\Dash.aspx.designer.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hr\download_all.aspx.cs">
+      <DependentUpon>download_all.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\download_all.aspx.designer.cs">
+      <DependentUpon>download_all.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\edituser.aspx.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\edituser.aspx.designer.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\forward.aspx.cs">
       <DependentUpon>forward.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="hr\forward.aspx.designer.cs">
       <DependentUpon>forward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\holidays_upload.aspx.cs">
+      <DependentUpon>holidays_upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\holidays_upload.aspx.designer.cs">
+      <DependentUpon>holidays_upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="hr\hrMaster.Master.cs">
       <DependentUpon>hrMaster.Master</DependentUpon>
@@ -554,12 +628,33 @@
     <Compile Include="hr\leavetaken.aspx.designer.cs">
       <DependentUpon>leavetaken.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hr\leave_logs.aspx.cs">
+      <DependentUpon>leave_logs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\leave_logs.aspx.designer.cs">
+      <DependentUpon>leave_logs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hr\ListLeaves.aspx.cs">
       <DependentUpon>ListLeaves.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="hr\ListLeaves.aspx.designer.cs">
       <DependentUpon>ListLeaves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\ListUser.aspx.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\ListUser.aspx.designer.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hr\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hr\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="hr\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -652,6 +747,13 @@
     <Compile Include="md\MdMaster.Master.designer.cs">
       <DependentUpon>MdMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="md\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="md\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -723,6 +825,13 @@
     </Compile>
     <Compile Include="user\ListLeaves.aspx.designer.cs">
       <DependentUpon>ListLeaves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\UserMaster.Master.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>

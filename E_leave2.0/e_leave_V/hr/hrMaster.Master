@@ -98,10 +98,23 @@
                         </div>
 
                         <ul class="nav navbar-nav navbar-right pull-right">
-
                             <li class="dropdown hidden-xs">
-                                <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light"
-                                    data-toggle="dropdown" aria-expanded="true">
+                                <a href="app_rej_forward" class="dropdown-toggle waves-effect waves-light"
+                                     aria-expanded="true">
+                                    <i class="fa fa-empire"></i><span
+                                        class="badge badge-xs badge-pink" id="info2"></span>
+                                </a>
+                            </li>
+                            <li class="dropdown hidden-xs">
+                                <a href="ListLeaves" class="dropdown-toggle waves-effect waves-light"
+                                     aria-expanded="true">
+                                    <i class="fa fa-bitbucket"></i><span
+                                        class="badge badge-xs badge-pink" id="info1"></span>
+                                </a>
+                            </li>
+                            <li class="dropdown hidden-xs">
+                                <a href="forward" class="dropdown-toggle waves-effect waves-light"
+                                    aria-expanded="true">
                                     <i class="md md-notifications"></i><span
                                         class="badge badge-xs badge-pink" id="info"></span>
                                 </a>
@@ -129,22 +142,22 @@
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="leaves" runat="server"><i class="fa fa-paper-plane"></i><span>Leaves</span>
                                 <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">
-                                <li id="leaves3" runat="server"><a href="ListLeaves">Apply</a></li>
+                            <ul class="list-unstyled leav">
+                                <li id="leaves1" runat="server"><a href="ListLeaves">Apply</a></li>
                                 <li id="leaves2" runat="server"><a href="cancel">Cancel Approved</a></li>
-                                <li id="leaves4" runat="server"><a href="forward">Forward Leaves</a></li>
-                                <li id="leaves5" runat="server"><a href="#">Forward Cancel Request</a></li>
-                                <li id="leaves6" runat="server"><a href="#">Download Leaves</a></li>
+                                <li id="leaves3" runat="server"><a href="forward">Forward Leaves</a></li>
+                                <li id="leaves4" runat="server"><a href="app_rej_forward">Forward Cancel Request</a></li>
+                                <li id="leaves5" runat="server"><a href="download_all">Download Leaves</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="sett" runat="server"><i class="fa fa-gears"></i><span>Manage</span>
                                 <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">
-                                <li id="sett1" runat="server"><a href="#">User's</a></li>
-                                <li id="sett2" runat="server"><a href="#">Holiday's</a></li>
-                                <li id="sett3" runat="server"><a href="#">Leave Status</a></li>
-                                <li id="sett4" runat="server"><a href="#">Carry Forward</a></li>
+                            <ul class="list-unstyled mang">
+                                <li id="sett1" runat="server"><a href="ListUser">User's</a></li>
+                                <li id="sett2" runat="server"><a href="holidays_upload">Holiday's</a></li>
+                                <li id="sett3" runat="server"><a href="leave_logs">Leave Status</a></li>
+                                <li id="sett4" runat="server"><a href="cf">Carry Forward</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
@@ -170,13 +183,13 @@
                         <span class="user-info-span">
                             <asp:Label ID="lbluser" runat="server" CssClass="m-t-0 m-b-0"></asp:Label>
                             <p class="text-muted m-b-0">
-                                <small><i class="fa fa-circle text-success"></i><span>Online</span></small>
+                                <small><i class="fa fa-circle text-success"></i><span> Online</span></small>
                             </p>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i>Profile</a></li>
-                        <li><a href="../Logout"><i class="md md-settings-power"></i>Logout</a></li>
+                        <li><a href="Profile"><i class="md md-face-unlock"></i> Profile</a></li>
+                        <li><a href="../Logout"><i class="md md-settings-power"></i> Logout</a></li>
                     </ul>
 
                 </div>
@@ -207,6 +220,9 @@
     </script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
+            updateAlerts();
+            updateAlerts1();
+            updateAlerts2();
             $(".loader").fadeOut("slow");
         });
     </script>
@@ -246,6 +262,9 @@
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/leaves_user.js"></script>
+    <script src="../assets/js/Validations/bulkuploadvalidation.js"></script>
+    <script src="../assets/js/Validations/uservalidation.js"></script>
+    <script src="../assets/js/Validations/updateprofile.js"></script>
 
     <%--Date Picker--%>
     <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
@@ -253,6 +272,76 @@
     <script src="../assets/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
     <%--Pulsate--%>
     <script src="../assets/plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
+
+    <script type="text/javascript">
+        function updateAlerts() {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{}",
+                url: "hrdash.aspx/updatealerts",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        $('#info').text(data.d);
+                    }
+                    else {
+                        $('#info').text("");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+        setInterval(updateAlerts, 10000); // 10 seconds
+    </script>
+    <script type="text/javascript">
+        function updateAlerts1() {
+            var data = {};
+            var userid = '<%= Session["user_id"] %>';
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: '{"userid":"' + userid + '"}',
+                url: "hrdash.aspx/updatealerts1",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        $('#info1').text(data.d);
+                    }
+                    else {
+                        $('#info1').text("");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+        setInterval(updateAlerts, 10000); // 10 seconds
+    </script>
+
+    <script type="text/javascript">
+        function updateAlerts2() {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: "{}",
+                url: "hrdash.aspx/updatealerts2",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        $('#info2').text(data.d);
+                    }
+                    else {
+                        $('#info2').text("");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+        setInterval(updateAlerts, 10000); // 10 seconds
+    </script>
 
 </body>
 </html>

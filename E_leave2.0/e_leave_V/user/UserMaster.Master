@@ -25,6 +25,8 @@
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
 
     <title>e-leave 2.0</title>
+    <%--RightClick Disabled--%>
+    <script src="../assets/js/Validations/RightClick.js"></script>
 
     <link href="../plugins/switchery/switchery.min.css" rel="stylesheet" />
     <!-- Bootstrap -->
@@ -100,8 +102,8 @@
                         <ul class="nav navbar-nav navbar-right pull-right">
 
                             <li class="dropdown hidden-xs">
-                                <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light"
-                                    data-toggle="dropdown" aria-expanded="true">
+                                <a href="ListLeaves" class="dropdown-toggle waves-effect waves-light"
+                                    aria-expanded="true">
                                     <i class="md md-notifications"></i><span
                                         class="badge badge-xs badge-pink" id="info"></span>
                                 </a>
@@ -129,7 +131,7 @@
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect waves-primary" id="leaves" runat="server"><i class="fa fa-paper-plane"></i><span> Leaves</span>
                                 <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">
+                            <ul class="list-unstyled leav">
                                 <li id="leaves3" runat="server"><a href="ListLeaves">Apply</a></li>
                                 <li id="leaves2" runat="server"><a href="cancel">Cancel Approved</a></li>
                             </ul>
@@ -153,7 +155,7 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                        <li><a href="Profile"><i class="md md-face-unlock"></i> Profile</a></li>
                         <li><a href="../Logout"><i class="md md-settings-power"></i> Logout</a></li>
                     </ul>
 
@@ -227,6 +229,7 @@
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/leaves_user.js"></script>
+    <script src="../assets/js/Validations/updateprofile.js"></script>
 
     <%--Date Picker--%>
     <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>

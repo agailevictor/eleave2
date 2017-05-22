@@ -9,6 +9,20 @@
         });
     </script>
     <script type="text/javascript">
+        function cfnot() {
+            swal({
+                title: 'Warning!',
+                text: 'Perform Carryforward!',
+                type: 'warning',
+                allowEscapeKey: false,
+                allowOutsideClick: false
+            },
+                function () {
+                    window.location = "cf";
+                });
+        }
+    </script>
+    <script type="text/javascript">
         function calendar() {
             var data = {};
             var rid = '<%= Session["region"] %>';
@@ -159,7 +173,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <!-- Start content -->
+    <!-- Start content -->
     <div class="content">
         <div class="container">
             <!-- Page-Title -->

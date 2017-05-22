@@ -44,17 +44,33 @@ namespace e_leave_V.md
                 case "Dash":
                     dash.Attributes["class"] = "active";
                     break;
-                case "ListLeaves":
+                case "app_rej":
                     leaves.Attributes["class"] = "active subdrop";
-                    leaves3.Attributes["class"] = "active open";
+                    leaves1.Attributes["class"] = "active open";
                     break;
-                case "leaveapply":
-                    leaves.Attributes["class"] = "active subdrop";
-                    leaves3.Attributes["class"] = "active open";
-                    break;
-                case "cancel":
+                case "cancelappr":
                     leaves.Attributes["class"] = "active subdrop";
                     leaves2.Attributes["class"] = "active open";
+                    break;
+                case "listuser":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett1.Attributes["class"] = "active open";
+                    break;
+                case "leave_logs":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett2.Attributes["class"] = "active open";
+                    break;
+                case "leavetaken":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep1.Attributes["class"] = "active open";
+                    break;
+                case "balleave":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep2.Attributes["class"] = "active open";
+                    break;
+                case "cfleave":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep3.Attributes["class"] = "active open";
                     break;
             }
         }

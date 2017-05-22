@@ -46,15 +46,61 @@ namespace e_leave_V.hr
                     break;
                 case "ListLeaves":
                     leaves.Attributes["class"] = "active subdrop";
-                    leaves3.Attributes["class"] = "active open";
+                    leaves1.Attributes["class"] = "active open";
                     break;
                 case "leaveapply":
                     leaves.Attributes["class"] = "active subdrop";
-                    leaves3.Attributes["class"] = "active open";
+                    leaves1.Attributes["class"] = "active open";
                     break;
                 case "cancel":
                     leaves.Attributes["class"] = "active subdrop";
                     leaves2.Attributes["class"] = "active open";
+                    break;
+                case "forward":
+                    leaves.Attributes["class"] = "active subdrop";
+                    leaves3.Attributes["class"] = "active open";
+                    break;
+                case "app_rej_forward":
+                    leaves.Attributes["class"] = "active subdrop";
+                    leaves4.Attributes["class"] = "active open";
+                    break;
+                case "download_all":
+                    leaves.Attributes["class"] = "active subdrop";
+                    leaves5.Attributes["class"] = "active open";
+                    break;
+
+                case "ListUser":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett1.Attributes["class"] = "active open";
+                    break;
+                case "AddUser":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett1.Attributes["class"] = "active open";
+                    break;
+                case "holidays_upload":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett2.Attributes["class"] = "active open";
+                    break;
+                case "leave_logs":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett3.Attributes["class"] = "active open";
+                    break;
+                case "cf":
+                    sett.Attributes["class"] = "active subdrop";
+                    sett4.Attributes["class"] = "active open";
+                    break;
+
+                case "leavetaken":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep1.Attributes["class"] = "active open";
+                    break;
+                case "balleave":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep2.Attributes["class"] = "active open";
+                    break;
+                case "cfleave":
+                    rep.Attributes["class"] = "active subdrop";
+                    rep3.Attributes["class"] = "active open";
                     break;
             }
         }

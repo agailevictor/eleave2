@@ -299,7 +299,7 @@
         var oTable = $("[id$=approved_hr]").dataTable({
             "aoColumnDefs": [{
                 'bSortable': false,
-                "aTargets": [0, 8, 9, 10, 11, 12, 13]
+                "aTargets": [0, 5, 6, 7, 8, 9, 10, 11]
             }],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
@@ -316,9 +316,9 @@
             // set the initial value
             "iDisplayLength": 10,
         });
-        $('#approved_hr_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#ContentPlaceHolder1_approved_hr_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
-        $('#approved_hr_wrapper .dataTables_length select').addClass("m-wrap small");
+        $('#ContentPlaceHolder1_approved_hr_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown
     };
 
@@ -389,7 +389,7 @@
             runDataTable8();
             runDataTable9();
             runDataTable12();
-            //runDataTable21();
+            runDataTable21();
             runDataTable22();
             runDataTable23();
         }

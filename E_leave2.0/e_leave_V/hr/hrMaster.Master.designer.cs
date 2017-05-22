@@ -40,13 +40,13 @@ namespace e_leave_V.hr {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor leaves;
         
         /// <summary>
-        /// leaves3 control.
+        /// leaves1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves1;
         
         /// <summary>
         /// leaves2 control.
@@ -56,6 +56,15 @@ namespace e_leave_V.hr {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves2;
+        
+        /// <summary>
+        /// leaves3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves3;
         
         /// <summary>
         /// leaves4 control.
@@ -74,15 +83,6 @@ namespace e_leave_V.hr {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves5;
-        
-        /// <summary>
-        /// leaves6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl leaves6;
         
         /// <summary>
         /// sett control.
