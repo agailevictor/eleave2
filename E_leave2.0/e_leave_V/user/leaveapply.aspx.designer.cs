@@ -58,6 +58,15 @@ namespace e_leave_V.user {
         protected global::System.Web.UI.WebControls.TextBox txtdate;
         
         /// <summary>
+        /// lblio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblio;
+        
+        /// <summary>
         /// txtsdate control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace e_leave_V.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtedate;
+        
+        /// <summary>
+        /// lblio1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblio1;
         
         /// <summary>
         /// ddlper control.
@@ -128,15 +146,6 @@ namespace e_leave_V.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fupload;
-        
-        /// <summary>
-        /// lblio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblio;
         
         /// <summary>
         /// btnreq control.

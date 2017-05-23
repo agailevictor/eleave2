@@ -313,7 +313,8 @@
                             endDate: edate, // to disable future year dates
                             todayHighlight: true, // to highlight today
                             datesDisabled: disableddates, // array of days to be disabled
-                            orientation: "bottom auto"
+                            orientation: "bottom auto",
+                            autoclose: true
                         });
 
                         $('#txtedate').datepicker({
@@ -324,7 +325,8 @@
                             endDate: edate, // to disable future year dates
                             todayHighlight: true, // to highlight today
                             datesDisabled: disableddates, // array of days to be disabled
-                            orientation: "bottom auto"
+                            orientation: "bottom auto",
+                            autoclose: true
                         });
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
