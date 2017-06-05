@@ -99,16 +99,6 @@ namespace e_leave_V.hr
                                 }
 
                             }
-                            //if (a.Rows[i][2].ToString().Trim() == "")
-                            //{
-                            //    CHK_NULL = 1;
-                            //    break;
-                            //}
-                            //else
-                            //{
-                            //    bus.event_color = a.Rows[i][2].ToString();
-
-                            //}
 
 
                         }
@@ -123,7 +113,6 @@ namespace e_leave_V.hr
 
                                 bus.event_name = a.Rows[i][0].ToString();
                                 bus.event_date = DateTime.Parse(a.Rows[i][1].ToString());
-                                //bus.event_color = a.Rows[i][2].ToString();
                                 bus.event_color = "#ff3232";
                                 int r = bus.upload_holidays();
                                 if (r == 1)
@@ -188,16 +177,6 @@ namespace e_leave_V.hr
                                 }
 
                             }
-                            //if (a.Rows[i][2].ToString().Trim() == "")
-                            //{
-                            //    CHK_NULL = 1;
-                            //    break;
-                            //}
-                            //else
-                            //{
-                            //    bus.event_color = a.Rows[i][2].ToString();
-
-                            //}
 
 
                         }
@@ -212,7 +191,6 @@ namespace e_leave_V.hr
 
                                 bus.event_name = a.Rows[i][0].ToString();
                                 bus.event_date = DateTime.Parse(a.Rows[i][1].ToString());
-                                //bus.event_color = a.Rows[i][2].ToString();
                                 bus.event_color = "#ff3232";
                                 int r = bus.upload_holidays_malaysia();
                                 if (r == 1)
