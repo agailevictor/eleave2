@@ -87,8 +87,8 @@
                             <asp:BoundField DataField="dob" HeaderText="Date Of Birth" />
                             <asp:BoundField DataField="dep" HeaderText="Department" />
                             <asp:BoundField DataField="designation" HeaderText="Designation" />
-                            <asp:BoundField DataField="grade" HeaderText="Grade" />
-                            <asp:BoundField DataField="region" HeaderText="Region" />
+                            <%--<asp:BoundField DataField="grade" HeaderText="Grade" />
+                            <asp:BoundField DataField="region" HeaderText="Region" />--%>
                             <asp:TemplateField HeaderText="Edit">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkedit" runat="server" CssClass="glyphicon glyphicon-edit" OnClick="lnkedit_Click" ClientIDMode="Static"></asp:LinkButton>
