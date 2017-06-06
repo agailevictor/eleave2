@@ -100,6 +100,9 @@ var userval = function () {
                 ctl00$ContentPlaceHolder1$ddlregion: {
                     required: true
                 },
+                ctl00$ContentPlaceHolder1$ddlreportingofficer: {
+                    required: true
+                },
                 ctl00$ContentPlaceHolder1$txtcategory: {
                     required: true
                 }

@@ -596,7 +596,7 @@ namespace e_leave_M
             }
         }
 
-        public int add_user(string name, string user_name, string email, string gender, DateTime doj, DateTime dob, int dep, int grade, int desi, int region)
+        public int add_user(string name, string user_name, string email, string gender, DateTime doj, DateTime dob, int dep, int grade, int desi, int region ,string islead,int leadid)
         {
             try
             {
@@ -613,6 +613,8 @@ namespace e_leave_M
                 cmd.Parameters.AddWithValue("@grade", grade);
                 cmd.Parameters.AddWithValue("@desi", desi);
                 cmd.Parameters.AddWithValue("@region", region);
+                cmd.Parameters.AddWithValue("@is_lead", islead);
+                cmd.Parameters.AddWithValue("@lead_id", leadid);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;
@@ -1299,7 +1301,7 @@ namespace e_leave_M
             }
         }
 
-        public int update_user(int id, string name, string user_name, string email, string gender, DateTime doj, int dep, int grade, int desi, int region, DateTime dob)
+        public int update_user(int id, string name, string user_name, string email, string gender, DateTime doj, int dep, int grade, int desi, int region, DateTime dob , string islead ,int leadid)
         {
             try
             {
@@ -1317,6 +1319,8 @@ namespace e_leave_M
                 cmd.Parameters.AddWithValue("@desi", desi);
                 cmd.Parameters.AddWithValue("@region", region);
                 cmd.Parameters.AddWithValue("@dob", dob);
+                cmd.Parameters.AddWithValue("@islead", islead);
+                cmd.Parameters.AddWithValue("@leadid", leadid);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;
@@ -1752,6 +1756,25 @@ namespace e_leave_M
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_fill_leves_appr_all";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable fill_reporting_officer()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_fetchall_users";
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();

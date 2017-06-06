@@ -45,6 +45,9 @@ namespace e_leave_C
         public string mob { get; set; }
         public string email { get; set; }
         public string role { get; set; }
+        public int report_offid { get; set; }
+        public string islead { get; set; }
+        
         //      public string region { get; set; }
 
         public int check_login()
@@ -172,7 +175,7 @@ namespace e_leave_C
         }
         public int add_user()
         {
-            return data.add_user(name, user_name, email, gender, doj, dob, dep, grade, desi, region);
+            return data.add_user(name, user_name, email, gender, doj, dob, dep, grade, desi, region,islead,report_offid);
         }
         public DataTable fetchdesignation()
         {
@@ -313,7 +316,7 @@ namespace e_leave_C
         }
         public int update_user()
         {
-            return data.update_user(id, name, user_name, email, gender, doj, dep, grade, desi, region, dob);
+            return data.update_user(id, name, user_name, email, gender, doj, dep, grade, desi, region, dob, islead, report_offid);
         }
 
         public DataTable fillcflist()
@@ -399,6 +402,10 @@ namespace e_leave_C
         public DataTable fill_leves_appr_all()
         {
             return data.fill_leves_appr_all();
+        }
+        public DataTable fill_reporting_officer()
+        {
+            return data.fill_reporting_officer();
         }
     }
 }
