@@ -443,7 +443,7 @@
                                         <label class="control-label">
                                             Is Lead
                                         </label>
-                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" ClientIDMode="Static"/>
+                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" BackColor="White" BorderStyle="None" ClientIDMode="Static"/>
                                     </div>
                                 </div>
                                 <div class="col-md-9">

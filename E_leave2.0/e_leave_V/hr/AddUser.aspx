@@ -436,7 +436,7 @@
                                         <label class="control-label">
                                             Is Lead
                                         </label>
-                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" ClientIDMode="Static"/>
+                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" BackColor="White" BorderStyle="None" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -447,7 +447,8 @@
                                         <asp:DropDownList ID="ddlreportingofficer" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="name" DataValueField="uid"></asp:DropDownList>
                                     </div>
                                 </div>
-                          </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div>
@@ -463,8 +464,8 @@
                             <div class="col-md-4">
                             </div>
                         </div>
-                    </div>
-                </div>
+    </div>
+    </div>
             </div>
         </div>
         <!-- end container -->

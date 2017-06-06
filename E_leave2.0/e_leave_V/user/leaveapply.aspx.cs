@@ -600,7 +600,7 @@ namespace e_leave_V.user
                         ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "error1();", true);
                     }
                 }
-                else if (int.Parse(ddlltype.SelectedValue.ToString()) == 5 || int.Parse(ddlltype.SelectedValue.ToString()) == 6) // Unpaid or Compassionate
+                else if (int.Parse(ddlltype.SelectedValue.ToString()) == 5 || int.Parse(ddlltype.SelectedValue.ToString()) == 6 || int.Parse(ddlltype.SelectedValue.ToString()) == 9) // Unpaid or Compassionate or Replacement
                 {
                     if (txtdate.Text != "" && ddlper.SelectedIndex != 0 && txtreason.Text != "" && ddljobc.SelectedValue.ToString() != "" && txtphone.Text != "")
                     {
