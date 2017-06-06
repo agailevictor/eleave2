@@ -284,6 +284,7 @@
             var disableddates = []; //dd/mm/yyyy
             var year = new Date().getFullYear() + '';
             edate = "31-12-" + year;
+            sdate = "01-01-2016"
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -299,7 +300,7 @@
                         keyboardNavigation: false,
                         autoclose: true,
                         daysOfWeekDisabled: "0,6", // to disable weekends 0 - sunday, 6 - saturday
-                        startDate: "today", // to disable previous days
+                        startDate: sdate, // to disable previous days
                         endDate: edate, // to disable future year dates
                         todayHighlight: true, // to highlight today
                         datesDisabled: disableddates, // array of days to be disabled

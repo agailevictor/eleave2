@@ -299,7 +299,7 @@
             var sdate;
             var year = new Date().getFullYear() + '';
             edate = "31-12-" + year;
-            sdate = "01-01-" + year;
+            sdate = "01-01-2016";
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
