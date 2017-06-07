@@ -146,6 +146,7 @@
                                 </asp:BoundField>
                                 <asp:BoundField DataField="days_req" HeaderText="Days" />
                                 <asp:BoundField DataField="period" HeaderText="Period" />
+                                <asp:BoundField DataField="erdates" HeaderText="Earned" />
                                 <asp:BoundField DataField="reason" HeaderText="Reason">
                                     <ItemStyle CssClass="WordWrap1" />
                                 </asp:BoundField>
