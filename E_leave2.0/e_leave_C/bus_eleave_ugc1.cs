@@ -216,6 +216,10 @@ namespace e_leave_C
         {
             return data.forward_leave(lid);
         }
+        public int approve_leave_hr_med()
+        {
+            return data.approve_leave_hr_med(lid, userid);
+        }
 
         public int reject_leave()
         {
