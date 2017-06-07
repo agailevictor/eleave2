@@ -824,6 +824,32 @@ namespace e_leave_M
             }
         }
 
+        public int approve_leave_hr_med(int lid, int userid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_approve_leave_hr_med";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lid", lid);
+                cmd.Parameters.AddWithValue("@userid", userid);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
         public int reject_leave(int lid, int userid, string reason)
         {
             try

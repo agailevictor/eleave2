@@ -170,9 +170,15 @@
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Minimum 7 & Maximum 50, No Special Charcaters allowed" ForeColor="Red" ControlToValidate="txtrejs" ValidationExpression="^[a-zA-Z0-9,.!? ]{7,50}$" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>' Display="Dynamic"></asp:RegularExpressionValidator>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Approve">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="lnkapprove" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-success m-b-5" OnClick="lnkapprove_Click" CausesValidation="False"><i class="fa fa-check-square"></i></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                
                                 <asp:TemplateField HeaderText="Forward">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-success m-b-5" OnClick="lnkforward_Click" CausesValidation="False"><i class="fa fa-thumbs-o-up"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-info m-b-5" OnClick="lnkforward_Click" CausesValidation="False"><i class="fa fa-mail-forward"></i></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Reject">

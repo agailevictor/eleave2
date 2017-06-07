@@ -174,6 +174,38 @@ namespace e_leave_V.hr
 
         }
 
+        protected void lnkapprove_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(grd_forward.DataKeys[row.RowIndex].Value.ToString());
+            bus.lid = id;
+            bus.userid = int.Parse(Session["user_id"].ToString());
+            int r = bus.approve_leave_hr_med();
+            if (r == 1)
+            {
+                fetch_mail_details_hr();
+                mailbody = "<table  border='1' cellpadding='0' cellspacing='0' style='width: 850px; border-color: black;'><tr><td colspan='9'><br>&nbsp &nbspDear " + row.Cells[2].Text.ToString() + ",<br /><br />&nbsp&nbsp&nbsp&nbsp&nbspLeave application submitted by you is <b>Approved </b> on " + DateTime.Now.ToString("dd/MM/yyyy") + ".</b> The details are as follows.<br /><br /></td></tr><tr style='font-weight: 700;'></tr><tr><td colspan='9'><br/><p></p><p> &nbsp&nbsp&nbspName:   " + row.Cells[2].Text.ToString() + "</p><p>&nbsp&nbsp&nbspDepartment:   " + row.Cells[3].Text.ToString() + "</p><p>&nbsp&nbsp&nbspDesignation:   " + row.Cells[4].Text.ToString() + " </p><p>&nbsp&nbsp&nbspLeave Type:   " + row.Cells[5].Text.ToString() + " </p><p>&nbsp&nbsp&nbspPeriod:   " + row.Cells[7].Text.ToString() + " </p><p>&nbsp&nbsp&nbspReason:   " + row.Cells[8].Text.ToString() + " </p><p>&nbsp&nbsp&nbspclick<a href=" + url2 + "> here </a>to login into the application (UOA)</p><p>&nbsp&nbsp&nbspclick<a href=" + url + "> here </a>to login into the application</p><br/></td></tr><tr></tr><td colspan='9' style='font-weight: bold' align='right'><br /><br />Regards,<br />Team e-leave</td></tr><tr><td align='center'><p style='color:blue;'> This is a system generated response. Please do not respond to this email id.</p></td></tr></table>";
+                bool check = SendWebMail(row.Cells[11].Text.ToString(), "Leave Application Notification", mailbody, toemail, "", "info@hummingsoft.com.my");
+                if (check == true)
+                {
+                    fillleavesfr();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "success();", true);
+                }
+                else
+                {
+                    fillleavesfr();
+                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "errormail();", true);
+                }
+            }
+            else
+            {
+                fillleavesfr();
+                ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "error();", true);
+            }
+
+        }
+
         protected void lnkreject_Click(object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
@@ -334,6 +366,25 @@ namespace e_leave_V.hr
                 flg = false;
             }
             return flg;
+        }
+
+        //Fetching HR mail address for setting the CC
+        protected void fetch_mail_details_hr()
+        {
+            toemail = "";
+            DataTable dt = obj.fetch_mail_details_hr();
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    toemail = toemail + dt.Rows[i]["email"].ToString();
+                    toemail += (i < dt.Rows.Count - 1) ? ";" : string.Empty;
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "warning_fetch();", true);
+            }
         }
 
     }
