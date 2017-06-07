@@ -36,6 +36,7 @@ namespace e_leave_V.hr
                     fillgender();
                     filldep();
                     fillregion();
+                    fillreportingofficer();
                     txtdoj.Attributes.Add("readonly", "readonly");
                     txtdob.Attributes.Add("readonly", "readonly");
                     txtcategory.Attributes.Add("readonly", "readonly");
@@ -156,10 +157,10 @@ namespace e_leave_V.hr
             }
             return grd;
         }
-
+        
         protected void btnuseradd_Click(object sender, EventArgs e)
         {
-            if (txtname.Text != "" && txtuname.Text != "" && txtemail.Text != "" && ddlgender.SelectedIndex != 0 && txtdoj.Text != "" && txtdob.Text != "" && ddldep.SelectedIndex != 0 && Request.Form[ddldesi.UniqueID] != null && Request.Form[ddlgrade.UniqueID] != null && ddlregion.SelectedIndex != 0)
+            if (txtname.Text != "" && txtuname.Text != "" && txtemail.Text != "" && ddlgender.SelectedIndex != 0 && txtdoj.Text != "" && txtdob.Text != "" && ddldep.SelectedIndex != 0 && Request.Form[ddldesi.UniqueID] != null && Request.Form[ddlgrade.UniqueID] != null && ddlregion.SelectedIndex != 0 && ddlreportingofficer.SelectedIndex != 0)
             {
                 if (txtemail.Text.Trim().Length <= 30)
                 {
@@ -182,6 +183,8 @@ namespace e_leave_V.hr
                                 bus.desi = int.Parse(Request.Form[ddldesi.UniqueID]);
                                 bus.grade = int.Parse(Request.Form[ddlgrade.UniqueID]);
                                 bus.region = int.Parse(ddlregion.SelectedValue.ToString());
+                                bus.report_offid = int.Parse(ddlreportingofficer.SelectedValue.ToString());
+                                bus.islead = chkIslead.Checked ? "Y" : "N";
                                 int r = bus.add_user();
                                 if (r == 1)
                                 {
@@ -233,6 +236,15 @@ namespace e_leave_V.hr
                 clearfeilds();
                 ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "error1();", true);
             }
+        }
+        //added By Ancy Mathew
+        //for reporting officer
+        protected void fillreportingofficer()
+        {
+            DataTable reg = bus.fill_reporting_officer();
+            ddlreportingofficer.DataSource = reg;
+            ddlreportingofficer.DataBind();
+            ddlreportingofficer.Items.Insert(0, new ListItem("-----SELECT-----", ""));
         }
     }
 }

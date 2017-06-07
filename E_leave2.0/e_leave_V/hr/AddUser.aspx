@@ -6,6 +6,11 @@
             dob();
             doj();
             $('.mang').css("display", "block");
+            //$('#chkIslead').change(function () {
+            //    if (this.checked) {
+            //        filllead();
+            //    }
+            //});
         });
     </script>
     <script type="text/javascript">
@@ -248,7 +253,6 @@
             }
         }
     </script>
-
     <script type="text/javascript">
         function fillgrade() {
             var grade;
@@ -310,6 +314,11 @@
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                 }
             });
+        }
+    </script>
+    <script type="text/javascript">
+        function filllead() {
+            alert(" asasas");
         }
     </script>
     <script type="text/javascript">
@@ -421,6 +430,24 @@
                                 </label>
                                 <asp:DropDownList ID="ddlregion" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="region" DataValueField="region_id"></asp:DropDownList>
                             </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Is Lead
+                                        </label>
+                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" BackColor="White" BorderStyle="None" ClientIDMode="Static" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Reporting Officer <span class="symbol required"></span>
+                                        </label>
+                                        <asp:DropDownList ID="ddlreportingofficer" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="name" DataValueField="uid"></asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -437,8 +464,8 @@
                             <div class="col-md-4">
                             </div>
                         </div>
-                    </div>
-                </div>
+    </div>
+    </div>
             </div>
         </div>
         <!-- end container -->
