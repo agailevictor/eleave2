@@ -147,7 +147,7 @@
                             <ul class="list-unstyled leav">
                                 <li id="leaves3" runat="server"><a href="ListLeaves">Apply</a></li>
                                 <li id="leaves2" runat="server"><a href="cancel">Cancel Approved</a></li>
-                                <li id="leaves4" runat="server"><a href="#">Forward Leaves</a></li>
+<%--                                <li id="leaves4" runat="server"><a href="#">Forward Leaves</a></li>--%>
                             </ul>
                         </li>
                     </ul>
