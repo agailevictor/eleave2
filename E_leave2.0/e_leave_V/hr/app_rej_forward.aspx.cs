@@ -53,8 +53,9 @@ namespace e_leave_V.hr
             }
             else
             {
-                approved_hr.DataSource = null;
-                approved_hr.DataBind();
+                DataTable emptydt = EmptyTable();
+                approved_hr_empty.DataSource = emptydt;
+                approved_hr_empty.DataBind();
             }
         }
 
@@ -170,6 +171,32 @@ namespace e_leave_V.hr
             }
         }
 
+        protected void approved_hr_empty_PreRender(object sender, EventArgs e)
+        {
+            if (approved_hr_empty.Rows.Count > 0)
+            {
+                approved_hr_empty.UseAccessibleHeader = true;
+                approved_hr_empty.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
 
+        static DataTable EmptyTable()
+        {
+            // Here we create a DataTable with nine columns.
+            DataTable emptydt = new DataTable();
+            emptydt.Columns.Add("name", typeof(string));
+            emptydt.Columns.Add("depname", typeof(string));
+            emptydt.Columns.Add("desig", typeof(string));
+            emptydt.Columns.Add("ltype", typeof(string));
+            emptydt.Columns.Add("dates", typeof(string));
+            emptydt.Columns.Add("period", typeof(string));
+            emptydt.Columns.Add("reason", typeof(string));
+            emptydt.Columns.Add("idate", typeof(string));
+            emptydt.Columns.Add("email", typeof(string));
+
+            // Here we add one DataRows.
+            emptydt.Rows.Add("", "", "", "Not Data Available !", "", "", "", "", "");
+            return emptydt;
+        }
     }
 }
