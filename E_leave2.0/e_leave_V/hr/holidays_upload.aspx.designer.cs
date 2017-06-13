@@ -13,6 +13,15 @@ namespace e_leave_V.hr {
     public partial class holidays_upload {
         
         /// <summary>
+        /// lnkdownloadtemp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkdownloadtemp;
+        
+        /// <summary>
         /// ddlreg control.
         /// </summary>
         /// <remarks>

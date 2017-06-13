@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h4 style="text-align: justify">Format for Uploading the data,copy all the cells in the excel including the header and paste it into the below shown box.
-                            The columns must in the format Event Name,Event Date(yyyy-mm-dd),Event Color</h4>
+                            The columns must in the format Day,Date(yyyy-mm-dd). Download Template from here <asp:LinkButton ID="lnkdownloadtemp" CssClass="fa fa-download" runat="server" OnClick="lnkdownloadtemp_Click" Font-Underline="False"></asp:LinkButton></h4>
                             <img src="../assets/images/leaves.jpg" height="auto" width="100%" />
                             <hr>
                             <div class="row">
@@ -82,14 +82,14 @@
                                         <label class="control-label">
                                             Region <span class="symbol required"></span>
                                         </label>
-                                        <asp:DropDownList ID="ddlreg" runat="server" CssClass="form-control cust" ClientIDMode="Static" DataTextField="region" DataValueField="region_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlreg" runat="server" CssClass="form-control cust" BorderColor="#999999" ClientIDMode="Static" DataTextField="region" DataValueField="region_id"></asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">
                                             Holidays <span class="symbol required"></span>
                                         </label>
                                         <asp:TextBox ID="txtholidays_hr" runat="server" TextMode="MultiLine"
-                                            CssClass="form-control cust1" ClientIDMode="Static" MaxLength="1" Rows="2"></asp:TextBox>
+                                            CssClass="form-control cust1" ClientIDMode="Static" MaxLength="1" Rows="2" BorderColor="#999999"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

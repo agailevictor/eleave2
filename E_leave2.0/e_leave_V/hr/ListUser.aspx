@@ -65,15 +65,6 @@
                 <div class="card-box">
                     <asp:GridView ID="grd_users" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" AutoGenerateColumns="False" DataKeyNames="uid" ClientIDMode="Static" OnPreRender="grd_users_PreRender">
                         <Columns>
-                            <asp:TemplateField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden">
-                                <ItemTemplate>
-                                    <asp:HiddenField ID="uid" runat="server" Value='<%# Eval("uid") %>' />
-                                </ItemTemplate>
-
-                                <HeaderStyle CssClass="hidden"></HeaderStyle>
-
-                                <ItemStyle CssClass="hidden"></ItemStyle>
-                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="No.">
                                 <ItemTemplate>
                                     <%# Container.DataItemIndex + 1 %>
@@ -87,8 +78,8 @@
                             <asp:BoundField DataField="dob" HeaderText="Date Of Birth" />
                             <asp:BoundField DataField="dep" HeaderText="Department" />
                             <asp:BoundField DataField="designation" HeaderText="Designation" />
-                            <%--<asp:BoundField DataField="grade" HeaderText="Grade" />
-                            <asp:BoundField DataField="region" HeaderText="Region" />--%>
+                            <asp:BoundField DataField="grade" HeaderText="Grade" />
+                            <asp:BoundField DataField="region" HeaderText="Region" />
                             <asp:TemplateField HeaderText="Edit">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkedit" runat="server" CssClass="glyphicon glyphicon-edit" OnClick="lnkedit_Click" ClientIDMode="Static"></asp:LinkButton>

@@ -165,7 +165,7 @@
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="Reject Reason">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtrejs" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="txtrejs" runat="server" CssClass="form-control" TextMode="MultiLine" BorderColor="#999999"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="req1" runat="server" ErrorMessage="Required" ControlToValidate="txtrejs" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>' ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Minimum 7 & Maximum 50, No Special Charcaters allowed" ForeColor="Red" ControlToValidate="txtrejs" ValidationExpression="^[a-zA-Z0-9,.!? ]{7,50}$" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>' Display="Dynamic"></asp:RegularExpressionValidator>
                                     </ItemTemplate>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        <asp:TextBox ID="txtbreason" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtbreason" runat="server" CssClass="form-control" TextMode="MultiLine" BorderColor="#999999"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="txtbreason" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Minimum 7 & Maximum 50, No Special Charcaters allowed" ForeColor="Red" ControlToValidate="txtbreason" ValidationExpression="^[a-zA-Z0-9,.!? ]{7,50}$" Display="Dynamic"></asp:RegularExpressionValidator>
                     </p>

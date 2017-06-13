@@ -107,42 +107,42 @@
                                     Name
                                 </label>
                                 <asp:Label ID="lblname" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Username
                                 </label>
                                 <asp:Label ID="lbluname" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Email
                                 </label>
                                 <asp:Label ID="lblemail" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Gender
                                 </label>
                                 <asp:Label ID="lblgender" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Date Of Join 
                                 </label>
                                 <asp:Label ID="lbldoj" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Department 
                                 </label>
                                 <asp:Label ID="lbldep" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -151,40 +151,40 @@
                                     Designation 
                                 </label>
                                 <asp:Label ID="lbldesg" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Grade 
                                 </label>
                                 <asp:Label ID="lblgrade" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Address 1 <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtadd1" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtadd1" runat="server" CssClass="form-control" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Address 2 <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtadd2" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtadd2" runat="server" CssClass="form-control" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Contact No <span class="symbol required"></span>
                                 </label>
                                 <asp:TextBox ID="txtphone" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:TextBox>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Region
                                 </label>
                                 <asp:Label ID="lblregion" runat="server" CssClass="form-control"
-                                    ClientIDMode="Static"></asp:Label>
+                                    ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
