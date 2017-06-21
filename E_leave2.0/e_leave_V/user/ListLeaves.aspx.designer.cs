@@ -13,13 +13,13 @@ namespace e_leave_V.user {
     public partial class ListLeaves {
         
         /// <summary>
-        /// log_leaves control.
+        /// grd_leaves_empty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable log_leaves;
+        protected global::System.Web.UI.WebControls.GridView grd_leaves_empty;
         
         /// <summary>
         /// grd_leaves control.

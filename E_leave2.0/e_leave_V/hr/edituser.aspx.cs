@@ -36,6 +36,7 @@ namespace e_leave_V.hr
                     fillgender();
                     filldep();
                     fillregion();
+                    fillreportingofficer();
                     txtdoje.Attributes.Add("readonly", "readonly");
                     txtcategory.Attributes.Add("readonly", "readonly");
                     fill_details();
@@ -104,6 +105,16 @@ namespace e_leave_V.hr
                 fillgrade(int.Parse(dt.Rows[0][6].ToString()));
                 ddlregion.Items.FindByValue(dt.Rows[0][8].ToString()).Selected = true;
                 txtdob.Text = dt.Rows[0][10].ToString();
+                if (dt.Rows[0][12].ToString() != null)
+                {
+                    ddlreportingofficer.Items.FindByValue(dt.Rows[0][12].ToString()).Selected = true;
+                }
+                if (dt.Rows[0][11].ToString()=="Y"){
+                    chkIslead.Checked = true;
+                }
+                else{
+                    chkIslead.Checked = false; 
+                }
             }
             else
             {
@@ -156,7 +167,7 @@ namespace e_leave_V.hr
 
         protected void btnupuser_Click(object sender, EventArgs e)
         {
-            if (txtname.Text != "" && txtuname.Text != "" && txtemail.Text != "" && ddlgender.SelectedIndex != 0 && txtdoje.Text != "" && ddldep.SelectedIndex != 0 && Request.Form[ddldesi.UniqueID] != null && Request.Form[ddlgrade.UniqueID] != null && ddlregion.SelectedIndex != 0 && txtdob.Text != "")
+            if (txtname.Text != "" && txtuname.Text != "" && txtemail.Text != "" && ddlgender.SelectedIndex != 0 && txtdoje.Text != "" && ddldep.SelectedIndex != 0 && Request.Form[ddldesi.UniqueID] != null && Request.Form[ddlgrade.UniqueID] != null && ddlregion.SelectedIndex != 0 && txtdob.Text != "" && ddlreportingofficer.SelectedIndex != 0)
             {
                 if (txtemail.Text.Trim().Length <= 30)
                 {
@@ -180,6 +191,8 @@ namespace e_leave_V.hr
                                 bus.grade = int.Parse(Request.Form[ddlgrade.UniqueID]);
                                 bus.region = int.Parse(ddlregion.SelectedValue.ToString());
                                 bus.dob = DateTime.Parse(txtdob.Text.Trim());
+                                bus.report_offid = int.Parse(ddlreportingofficer.SelectedValue.ToString());
+                                bus.islead = chkIslead.Checked ? "Y" : "N";
                                 int r = bus.update_user();
                                 if (r == 1)
                                 {
@@ -245,6 +258,13 @@ namespace e_leave_V.hr
             ddlregion.SelectedIndex = 0;
             Session["edit_id"] = "";
             txtdob.Text = "";
+        }
+        protected void fillreportingofficer()
+        {
+            DataTable reg = bus.fill_reporting_officer();
+            ddlreportingofficer.DataSource = reg;
+            ddlreportingofficer.DataBind();
+            ddlreportingofficer.Items.Insert(0, new ListItem("-----SELECT-----", ""));
         }
     }
 }

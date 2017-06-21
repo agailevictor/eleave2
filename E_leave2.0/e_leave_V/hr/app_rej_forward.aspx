@@ -106,6 +106,32 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
+
+                        <asp:GridView ID="approved_hr_empty" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap" OnPreRender="approved_hr_empty_PreRender">
+                            <Columns>
+                                <asp:TemplateField HeaderText="No"></asp:TemplateField>
+                                <asp:BoundField HeaderText="Name" DataField="name" />
+                                <asp:BoundField HeaderText="Department" DataField="depname" />
+                                <asp:BoundField HeaderText="Designation" DataField="desig" />
+                                <asp:BoundField HeaderText="Leave Type" DataField="ltype" />
+                                <asp:BoundField HeaderText="Dates Applied" DataField="dates">
+                                    <ItemStyle CssClass="WordWrap1" />
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Period" DataField="period" />
+                                <asp:BoundField HeaderText="Reason" DataField="reason" />
+
+                                <asp:BoundField DataField="idate" HeaderText="idate">
+                                    <HeaderStyle CssClass="hidden"></HeaderStyle>
+                                    <ItemStyle CssClass="hidden"></ItemStyle>
+                                </asp:BoundField>
+                                <asp:BoundField DataField="email" HeaderText="Email">
+                                    <HeaderStyle CssClass="hidden"></HeaderStyle>
+                                    <ItemStyle CssClass="hidden"></ItemStyle>
+                                </asp:BoundField>
+                                <asp:TemplateField HeaderText="Approve"></asp:TemplateField>
+                                <asp:TemplateField HeaderText="Reject"></asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
             </div>

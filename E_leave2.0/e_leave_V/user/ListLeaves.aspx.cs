@@ -22,7 +22,6 @@ namespace e_leave_V.user
         public string toemail, mailbody, url = "http://uoa.hummingsoft.com.my:8065/e_leave/ target=\"_blank\"", url2 = "http://192.168.1.65/e_leave/ target=\"_blank\"";
         protected void Page_Load(object sender, EventArgs e)
         {
-            log_leaves.Visible = false;
             if (!IsPostBack)
             {
                 checklogin();
@@ -65,7 +64,9 @@ namespace e_leave_V.user
             }
             else
             {
-                log_leaves.Visible = true;
+                DataTable emptydt = EmptyTable();
+                grd_leaves_empty.DataSource = emptydt;
+                grd_leaves_empty.DataBind();
             }
         }
 
@@ -229,6 +230,29 @@ namespace e_leave_V.user
                 flg = false;
             }
             return flg;
+        }
+
+        protected void grd_leaves_empty_PreRender(object sender, EventArgs e)
+        {
+            if (grd_leaves_empty.Rows.Count > 0)
+            {
+                grd_leaves_empty.UseAccessibleHeader = true;
+                grd_leaves_empty.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        static DataTable EmptyTable()
+        {
+            DataTable emptydt = new DataTable();
+            emptydt.Columns.Add("ltype", typeof(string));
+            emptydt.Columns.Add("req_date", typeof(string));
+            emptydt.Columns.Add("dates", typeof(string));
+            emptydt.Columns.Add("period", typeof(string));
+            emptydt.Columns.Add("rej_reason", typeof(string));
+            emptydt.Columns.Add("stat", typeof(string));
+
+            emptydt.Rows.Add("", "", "", "Not Data Available !", "", "");
+            return emptydt;
         }
     }
 }

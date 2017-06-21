@@ -6,6 +6,11 @@
             dob();
             doj();
             $('.mang').css("display", "block");
+            //$('#chkIslead').change(function () {
+            //    if (this.checked) {
+            //        filllead();
+            //    }
+            //});
         });
     </script>
     <script type="text/javascript">
@@ -248,7 +253,6 @@
             }
         }
     </script>
-
     <script type="text/javascript">
         function fillgrade() {
             var grade;
@@ -284,6 +288,7 @@
             var disableddates = []; //dd/mm/yyyy
             var year = new Date().getFullYear() + '';
             edate = "31-12-" + year;
+            sdate = "01-01-2016"
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -299,7 +304,7 @@
                         keyboardNavigation: false,
                         autoclose: true,
                         daysOfWeekDisabled: "0,6", // to disable weekends 0 - sunday, 6 - saturday
-                        startDate: "today", // to disable previous days
+                        startDate: sdate, // to disable previous days
                         endDate: edate, // to disable future year dates
                         todayHighlight: true, // to highlight today
                         datesDisabled: disableddates, // array of days to be disabled
@@ -309,6 +314,11 @@
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                 }
             });
+        }
+    </script>
+    <script type="text/javascript">
+        function filllead() {
+            alert(" asasas");
         }
     </script>
     <script type="text/javascript">
@@ -350,13 +360,13 @@
                                 <label class="control-label">
                                     Name <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Username <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtuname" runat="server" CssClass="form-control" onchange="checkusername()" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtuname" runat="server" CssClass="form-control" onchange="checkusername()" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                                 <div id="pulsate-regularun" style="padding: 5px; width: 202px; display: none">
                                     <asp:Label ID="lblun" runat="server" CssClass="control-label" Text="Username Already Taken" ClientIDMode="Static" ForeColor="#e6674a"></asp:Label>
                                 </div>
@@ -365,7 +375,7 @@
                                 <label class="control-label">
                                     Email <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtemail" runat="server" CssClass="form-control" onchange="checkemail()" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtemail" runat="server" CssClass="form-control" onchange="checkemail()" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                                 <div id="pulsate-regularem" style="padding: 5px; width: 202px; display: none">
                                     <asp:Label ID="lblem" runat="server" Text="Email can't be same" ClientIDMode="Static" ForeColor="#e6674a"></asp:Label>
                                 </div>
@@ -374,19 +384,19 @@
                                 <label class="control-label">
                                     Gender <span class="symbol required"></span>
                                 </label>
-                                <asp:DropDownList ID="ddlgender" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="gender" DataValueField="gid"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlgender" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="gender" DataValueField="gid" BorderColor="#999999"></asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Date Join <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtdoj" runat="server" CssClass="chosen-disabled form-control" BackColor="White" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtdoj" runat="server" CssClass="chosen-disabled form-control" BackColor="White" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Date of Birth <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtdob" runat="server" CssClass="chosen-disabled form-control" BackColor="White" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txtdob" runat="server" CssClass="chosen-disabled form-control" BackColor="White" ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -394,31 +404,49 @@
                                 <label class="control-label">
                                     Department <span class="symbol required"></span>
                                 </label>
-                                <asp:DropDownList ID="ddldep" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="dep_name" DataValueField="dep_id" onchange="filldesi()"></asp:DropDownList>
+                                <asp:DropDownList ID="ddldep" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="dep_name" DataValueField="dep_id" onchange="filldesi()" BorderColor="#999999"></asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Designation <span class="symbol required"></span>
                                 </label>
-                                <asp:DropDownList ID="ddldesi" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="designation" DataValueField="dsg_id" onchange="fillgrade()"></asp:DropDownList>
+                                <asp:DropDownList ID="ddldesi" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="designation" DataValueField="dsg_id" onchange="fillgrade()" BorderColor="#999999"></asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Grade <span class="symbol required"></span>
                                 </label>
-                                <asp:DropDownList ID="ddlgrade" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlgrade" runat="server" CssClass="form-control" ClientIDMode="Static" BorderColor="#999999"></asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Category <span class="symbol required"></span>
                                 </label>
-                                <asp:TextBox ID="txtcategory" runat="server" CssClass="form-control" ClientIDMode="Static" BackColor="White"></asp:TextBox>
+                                <asp:TextBox ID="txtcategory" runat="server" CssClass="form-control" ClientIDMode="Static" BackColor="White" BorderColor="#999999"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">
                                     Region <span class="symbol required"></span>
                                 </label>
-                                <asp:DropDownList ID="ddlregion" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="region" DataValueField="region_id"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlregion" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="region" DataValueField="region_id" BorderColor="#999999"></asp:DropDownList>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Is Lead
+                                        </label>
+                                        <asp:CheckBox ID="chkIslead" runat="server" CssClass="form-control" BackColor="White" BorderStyle="None" ClientIDMode="Static" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Reporting Officer <span class="symbol required"></span>
+                                        </label>
+                                        <asp:DropDownList ID="ddlreportingofficer" runat="server" CssClass="form-control" ClientIDMode="Static" DataTextField="name" DataValueField="uid" BorderColor="#999999"></asp:DropDownList>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -436,8 +464,8 @@
                             <div class="col-md-4">
                             </div>
                         </div>
-                    </div>
-                </div>
+    </div>
+    </div>
             </div>
         </div>
         <!-- end container -->

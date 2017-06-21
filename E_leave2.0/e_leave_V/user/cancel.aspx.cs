@@ -22,7 +22,6 @@ namespace e_leave_V.user
         CultureInfo provider = CultureInfo.InvariantCulture;
         protected void Page_Load(object sender, EventArgs e)
         {
-            log_cancel.Visible = false;
             if (!IsPostBack)
             {
                 checklogin();
@@ -59,7 +58,9 @@ namespace e_leave_V.user
             }
             else
             {
-                log_cancel.Visible = true;
+                DataTable emptydt = EmptyTable();
+                grd_cancel_empty.DataSource = emptydt;
+                grd_cancel_empty.DataBind();
             }
         }
         protected void fetch_mail_details_cancel()
@@ -161,6 +162,26 @@ namespace e_leave_V.user
                 flg = false;
             }
             return flg;
+        }
+
+        protected void grd_cancel_empty_PreRender(object sender, EventArgs e)
+        {
+            if (grd_cancel_empty.Rows.Count > 0)
+            {
+                grd_cancel_empty.UseAccessibleHeader = true;
+                grd_cancel_empty.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+        static DataTable EmptyTable()
+        {
+            DataTable emptydt = new DataTable();
+            emptydt.Columns.Add("ltype", typeof(string));
+            emptydt.Columns.Add("req_date", typeof(string));
+            emptydt.Columns.Add("dates", typeof(string));
+            emptydt.Columns.Add("stat", typeof(string));
+
+            emptydt.Rows.Add("", "", "Not Data Available !", "");
+            return emptydt;
         }
     }
 }

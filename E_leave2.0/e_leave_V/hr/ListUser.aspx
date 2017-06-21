@@ -65,15 +65,6 @@
                 <div class="card-box">
                     <asp:GridView ID="grd_users" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" AutoGenerateColumns="False" DataKeyNames="uid" ClientIDMode="Static" OnPreRender="grd_users_PreRender">
                         <Columns>
-                            <asp:TemplateField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden">
-                                <ItemTemplate>
-                                    <asp:HiddenField ID="uid" runat="server" Value='<%# Eval("uid") %>' />
-                                </ItemTemplate>
-
-                                <HeaderStyle CssClass="hidden"></HeaderStyle>
-
-                                <ItemStyle CssClass="hidden"></ItemStyle>
-                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="No.">
                                 <ItemTemplate>
                                     <%# Container.DataItemIndex + 1 %>

@@ -130,6 +130,24 @@ namespace e_leave_V.hr {
         protected global::System.Web.UI.WebControls.DropDownList ddlregion;
         
         /// <summary>
+        /// chkIslead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIslead;
+        
+        /// <summary>
+        /// ddlreportingofficer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlreportingofficer;
+        
+        /// <summary>
         /// btnuseradd control.
         /// </summary>
         /// <remarks>

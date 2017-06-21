@@ -138,13 +138,15 @@
                                     <ItemTemplate><%# Container.DataItemIndex + 1 %></ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="name" HeaderText="Name" />
-                                <asp:BoundField DataField="depname" HeaderText="Department" />
+                                <%--<asp:BoundField DataField="depname" HeaderText="Department" />--%>
                                 <asp:BoundField DataField="desig" HeaderText="Designation" />
                                 <asp:BoundField DataField="ltype" HeaderText="Leave Type" />
                                 <asp:BoundField DataField="dates" HeaderText="Dates Applied">
                                     <ItemStyle CssClass="WordWrap1" />
                                 </asp:BoundField>
+                                <asp:BoundField DataField="days_req" HeaderText="Days" />
                                 <asp:BoundField DataField="period" HeaderText="Period" />
+                                <asp:BoundField DataField="erdates" HeaderText="Earned" />
                                 <asp:BoundField DataField="reason" HeaderText="Reason">
                                     <ItemStyle CssClass="WordWrap1" />
                                 </asp:BoundField>
@@ -163,14 +165,20 @@
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="Reject Reason">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtrejs" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="txtrejs" runat="server" CssClass="form-control" TextMode="MultiLine" BorderColor="#999999"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="req1" runat="server" ErrorMessage="Required" ControlToValidate="txtrejs" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>' ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Minimum 7 & Maximum 50, No Special Charcaters allowed" ForeColor="Red" ControlToValidate="txtrejs" ValidationExpression="^[a-zA-Z0-9,.!? ]{7,50}$" ValidationGroup='<%# "Group_" + Container.DataItemIndex %>' Display="Dynamic"></asp:RegularExpressionValidator>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Approve">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="lnkapprove" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-success m-b-5" OnClick="lnkapprove_Click" CausesValidation="False"><i class="fa fa-check-square"></i></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                
                                 <asp:TemplateField HeaderText="Forward">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-success m-b-5" OnClick="lnkforward_Click" CausesValidation="False"><i class="fa fa-thumbs-o-up"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkforward" runat="server" CssClass="btn btn-icon waves-effect waves-light btn-info m-b-5" OnClick="lnkforward_Click" CausesValidation="False"><i class="fa fa-mail-forward"></i></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Reject">
@@ -206,7 +214,7 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        <asp:TextBox ID="txtbreason" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtbreason" runat="server" CssClass="form-control" TextMode="MultiLine" BorderColor="#999999"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="txtbreason" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Minimum 7 & Maximum 50, No Special Charcaters allowed" ForeColor="Red" ControlToValidate="txtbreason" ValidationExpression="^[a-zA-Z0-9,.!? ]{7,50}$" Display="Dynamic"></asp:RegularExpressionValidator>
                     </p>

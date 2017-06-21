@@ -202,10 +202,16 @@
     <script type="text/javascript">
         function hideshowfup() {
             $('#txtdate').pulsate("destroy");
+            $('#txtdate').removeAttr("style", "")
+            $('#txtdate').css({"background-color":"white","border-color":"#999999"});
             $('#pulsate-regulario').hide();
 
             $('#txtsdate').pulsate("destroy");
             $('#txtedate').pulsate("destroy");
+            $('#txtsdate').removeAttr("style", "")
+            $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtedate').removeAttr("style", "")
+            $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
             $('#pulsate-regulario1').hide();
             $('#lblio').hide();
             $('#lblio1').hide();
@@ -277,9 +283,15 @@
                 $('#lblio1').hide()
                 $('#txtdate').pulsate("destroy");
                 $('#pulsate-regulario').hide();
+                $('#txtdate').removeAttr("style", "")
+                $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
 
                 $('#txtsdate').pulsate("destroy");
                 $('#txtedate').pulsate("destroy");
+                $('#txtsdate').removeAttr("style", "")
+                $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+                $('#txtedate').removeAttr("style", "")
+                $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
                 $('#pulsate-regulario1').hide();
                 $('#btnreq').prop("disabled", false);
             }
@@ -353,6 +365,12 @@
             $('#txtdate').pulsate("destroy");
             $('#txtsdate').pulsate("destroy");
             $('#txtedate').pulsate("destroy");
+            $('#txtdate').removeAttr("style", "")
+            $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtsdate').removeAttr("style", "")
+            $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtedate').removeAttr("style", "")
+            $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
             $('#pulsate-regulario').hide();
             $('#pulsate-regulario1').hide();
             $('#btnreq').prop("disabled", false);
@@ -368,10 +386,16 @@
             $('#lblio').hide();
             $('#txtdate').pulsate("destroy");
             $('#pulsate-regulario').hide();
+            $('#txtdate').removeAttr("style", "")
+            $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
 
             $('#lblio1').hide();
             $('#txtsdate').pulsate("destroy");
             $('#txtedate').pulsate("destroy");
+            $('#txtsdate').removeAttr("style", "")
+            $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtedate').removeAttr("style", "")
+            $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
             $('#pulsate-regulario1').hide();
             var data = {};
 
@@ -394,6 +418,8 @@
                             if (data.d == 1) {
                                 $('#lblio').hide();
                                 $('#txtdate').pulsate("destroy");
+                                $('#txtdate').removeAttr("style", "")
+                                $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
                                 $('#pulsate-regulario').hide();
                                 $('#btnreq').prop("disabled", false);
                             }
@@ -443,6 +469,10 @@
                     $('#lblio1').hide();
                     $('#txtsdate').pulsate("destroy");
                     $('#txtedate').pulsate("destroy");
+                    $('#txtsdate').removeAttr("style", "")
+                    $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+                    $('#txtedate').removeAttr("style", "")
+                    $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
                     $('#pulsate-regulario1').hide();
 
                     $.ajax({
@@ -464,6 +494,10 @@
                                         $('#lblio1').hide();
                                         $('#txtsdate').pulsate("destroy");
                                         $('#txtedate').pulsate("destroy");
+                                        $('#txtsdate').removeAttr("style", "")
+                                        $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+                                        $('#txtedate').removeAttr("style", "")
+                                        $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
                                         $('#pulsate-regulario1').hide();
                                         $('#btnreq').prop("disabled", false);
                                     }
@@ -541,6 +575,12 @@
                     $('#txtdate').pulsate("destroy");
                     $('#txtsdate').pulsate("destroy");
                     $('#txtedate').pulsate("destroy");
+                    $('#txtdate').removeAttr("style", "")
+                    $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
+                    $('#txtsdate').removeAttr("style", "")
+                    $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+                    $('#txtedate').removeAttr("style", "")
+                    $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
                     $('#pulsate-regulario').hide();
                     $('#pulsate-regulario1').hide();
                     $('#btnreq').prop("disabled", false);
@@ -553,6 +593,12 @@
             $('#txtdate').pulsate("destroy");
             $('#txtsdate').pulsate("destroy");
             $('#txtedate').pulsate("destroy");
+            $('#txtdate').removeAttr("style", "")
+            $('#txtdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtsdate').removeAttr("style", "")
+            $('#txtsdate').css({ "background-color": "white", "border-color": "#999999" });
+            $('#txtedate').removeAttr("style", "")
+            $('#txtedate').css({ "background-color": "white", "border-color": "#999999" });
             $('#pulsate-regulario').hide();
             $('#pulsate-regulario1').hide();
             $('#btnreq').prop("disabled", false);
@@ -625,21 +671,21 @@
                                         Name 
                                     </label>
                                     <asp:Label ID="lblname" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static"></asp:Label>
+                                        ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
                                         Position 
                                     </label>
                                     <asp:Label ID="lblpos" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static"></asp:Label>
+                                        ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
                                         Department 
                                     </label>
                                     <asp:Label ID="lbldep" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static"></asp:Label>
+                                        ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
@@ -647,7 +693,7 @@
                                     </label>
                                     <asp:DropDownList ID="ddlltype" runat="server" CssClass="form-control"
                                         ClientIDMode="Static" onchange="hideshowfup()" DataTextField="leave_type"
-                                        DataValueField="ltype_id">
+                                        DataValueField="ltype_id" BorderColor="#999999">
                                     </asp:DropDownList>
                                 </div>
                                 <div class="form-group" id="dates">
@@ -655,7 +701,7 @@
                                         Dates <span class="symbol required"></span>
                                     </label>
                                     <asp:TextBox ID="txtdate" runat="server" CssClass="chosen-disabled form-control"
-                                        ClientIDMode="Static" BackColor="White" onchange="reset_period()"></asp:TextBox>
+                                        ClientIDMode="Static" BackColor="White" onchange="reset_period()" BorderColor="#999999"></asp:TextBox>
                                     <div id="pulsate-regulario" style="padding: 5px; width: 202px; display: none">
                                         <asp:Label ID="lblio" runat="server" ClientIDMode="Static" ForeColor="#e6674a"></asp:Label>
                                     </div>
@@ -667,13 +713,13 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="col-sm-6" style="padding-left: 0px !important; padding-right: 0px !important;">
-                                                <asp:TextBox ID="txtsdate" runat="server" CssClass="chosen-disabled form-control" ClientIDMode="Static" BackColor="White" onchange="reset_period()"></asp:TextBox>
+                                                <asp:TextBox ID="txtsdate" runat="server" CssClass="chosen-disabled form-control" ClientIDMode="Static" BackColor="White" onchange="reset_period()" BorderColor="#999999"></asp:TextBox>
                                             </div>
                                             <div class="col-sm-1">
                                                 <span>to</span>
                                             </div>
                                             <div class="col-sm-5" style="padding-left: 0px !important; padding-right: 0px !important;">
-                                                <asp:TextBox ID="txtedate" runat="server" CssClass="chosen-disabled form-control" ClientIDMode="Static" BackColor="White" onchange="reset_period()"></asp:TextBox>
+                                                <asp:TextBox ID="txtedate" runat="server" CssClass="chosen-disabled form-control" ClientIDMode="Static" BackColor="White" onchange="reset_period()" BorderColor="#999999"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -686,7 +732,7 @@
                                         Period <span class="symbol required"></span>
                                     </label>
                                     <asp:DropDownList ID="ddlper" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static" DataTextField="period" DataValueField="period_id" onchange="in_or_out()">
+                                        ClientIDMode="Static" DataTextField="period" DataValueField="period_id" onchange="in_or_out()" BorderColor="#999999">
                                     </asp:DropDownList>
                                 </div>
 
@@ -696,21 +742,21 @@
                                     <label class="control-label">
                                         Selected
                                     </label>
-                                    <asp:Label ID="lblreq" runat="server" CssClass="form-control" Text="N/A" ClientIDMode="Static"></asp:Label>
+                                    <asp:Label ID="lblreq" runat="server" CssClass="form-control" Text="N/A" ClientIDMode="Static" BorderColor="#999999"></asp:Label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
                                         Reason <span class="symbol required"></span>
                                     </label>
                                     <asp:TextBox ID="txtreason" runat="server" TextMode="MultiLine"
-                                        CssClass="form-control" ClientIDMode="Static" MaxLength="1" Rows="2"></asp:TextBox>
+                                        CssClass="form-control" ClientIDMode="Static" MaxLength="1" Rows="2" BorderColor="#999999"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">
                                         My Job Will be coverd by <span class="symbol required"></span>
                                     </label>
                                     <asp:DropDownList ID="ddljobc" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static" DataTextField="Name" DataValueField="user_id">
+                                        ClientIDMode="Static" DataTextField="Name" DataValueField="user_id" BorderColor="#999999">
                                     </asp:DropDownList>
                                 </div>
                                 <div class="form-group">
@@ -718,14 +764,14 @@
                                         Contact No <span class="symbol required"></span>
                                     </label>
                                     <asp:TextBox ID="txtphone" runat="server" CssClass="form-control"
-                                        ClientIDMode="Static"></asp:TextBox>
+                                        ClientIDMode="Static" BorderColor="#999999"></asp:TextBox>
                                 </div>
                                 <div class="form-group" id="fup" style="display: none">
                                     <label class="control-label">
                                         Medical Certificate <span class="symbol required"></span>
                                     </label>
                                     <asp:FileUpload ID="fupload" runat="server"
-                                        CssClass="fileupload fileupload-new" ClientIDMode="Static" />
+                                        CssClass="fileupload fileupload-new" ClientIDMode="Static" BorderColor="#999999" />
                                     <p class="help-block">
                                         Allowed File Type is PDF. <span class="clip-file-pdf"></span>
                                     </p>

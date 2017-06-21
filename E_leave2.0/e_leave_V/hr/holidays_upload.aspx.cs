@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Net;
 using e_leave_C;
 
 namespace e_leave_V.hr
@@ -13,6 +14,7 @@ namespace e_leave_V.hr
     {
         bus_eleave_ugc1 bus = new bus_eleave_ugc1();
         datamapper datamapper = new datamapper();
+        WebClient client = new WebClient();
         int CHK_NULL, CHK_EF, r1, r2;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -99,16 +101,6 @@ namespace e_leave_V.hr
                                 }
 
                             }
-                            //if (a.Rows[i][2].ToString().Trim() == "")
-                            //{
-                            //    CHK_NULL = 1;
-                            //    break;
-                            //}
-                            //else
-                            //{
-                            //    bus.event_color = a.Rows[i][2].ToString();
-
-                            //}
 
 
                         }
@@ -123,7 +115,6 @@ namespace e_leave_V.hr
 
                                 bus.event_name = a.Rows[i][0].ToString();
                                 bus.event_date = DateTime.Parse(a.Rows[i][1].ToString());
-                                //bus.event_color = a.Rows[i][2].ToString();
                                 bus.event_color = "#ff3232";
                                 int r = bus.upload_holidays();
                                 if (r == 1)
@@ -188,16 +179,6 @@ namespace e_leave_V.hr
                                 }
 
                             }
-                            //if (a.Rows[i][2].ToString().Trim() == "")
-                            //{
-                            //    CHK_NULL = 1;
-                            //    break;
-                            //}
-                            //else
-                            //{
-                            //    bus.event_color = a.Rows[i][2].ToString();
-
-                            //}
 
 
                         }
@@ -212,7 +193,6 @@ namespace e_leave_V.hr
 
                                 bus.event_name = a.Rows[i][0].ToString();
                                 bus.event_date = DateTime.Parse(a.Rows[i][1].ToString());
-                                //bus.event_color = a.Rows[i][2].ToString();
                                 bus.event_color = "#ff3232";
                                 int r = bus.upload_holidays_malaysia();
                                 if (r == 1)
@@ -291,6 +271,21 @@ namespace e_leave_V.hr
                 }
                 r1 = bus.upload_holidays();
                 Date = Date.AddDays(1);
+            }
+        }
+
+        protected void lnkdownloadtemp_Click(object sender, EventArgs e)
+        {
+            string Path = "~/uploads/Holidays - Template_12-06-17_01;47;41.xlsx";
+            string T_path = Server.MapPath(Path);
+            Byte[] buffer = client.DownloadData(T_path);
+            if (buffer != null)
+            {
+                Response.AddHeader("content-disposition", "attachment;filename=Holidays_Template.xlsx");
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.xlsx";
+                Response.AddHeader("content-length", buffer.Length.ToString());
+                Response.BinaryWrite(buffer);
             }
         }
     }

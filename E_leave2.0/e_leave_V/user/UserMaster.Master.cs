@@ -23,6 +23,7 @@ namespace e_leave_V.user
                 if (Session["is_login"].ToString() == "t")
                 {
                     lbluser.Text = Session["name"].ToString();
+                    //hide_show_menu();
                     SetCurrentPage();
                 }
                 else
@@ -62,5 +63,17 @@ namespace e_leave_V.user
         {
             return Request.Url.ToString().Split('/').Last();
         }
+
+        //private void hide_show_menu()
+        //{
+        //    if (Session["is_lead"].ToString() == "N")
+        //    {
+        //        leaves4.Attributes["class"] = "hidden";
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
     }
 }

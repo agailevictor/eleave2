@@ -72,6 +72,7 @@ namespace e_leave_V
                 Session["des"] = dt.Rows[0][5].ToString();
                 Session["role"] = dt.Rows[0][6].ToString();
                 Session["region"] = dt.Rows[0][7].ToString();
+                Session["is_lead"] = dt.Rows[0][8].ToString();
                 Session["is_login"] = "t";
                 if (Session["role"].ToString() == "User")
                 {
