@@ -336,7 +336,7 @@
                 $('#dates').show();
                 $("#txtdate").datepicker('remove');
                 $("#ddlper option[value='2']").removeAttr('disabled');
-                startdate = "+2d";
+                startdate = "-7d";
                 var year = new Date().getFullYear() + '';
                 enddate = "31-12-" + year;
                 datepick();
